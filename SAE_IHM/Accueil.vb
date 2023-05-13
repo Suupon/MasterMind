@@ -4,7 +4,7 @@ Imports System.Text
 Public Class Accueil
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim lst_joueurs_connus As String() = IO.File.ReadAllLines("E:\VBA\IHM_SAE\IHM_SAE\lst_joueurs.txt")
-        Dim file_path_joueurs As String = "E:..\..\..\lst_joueurs.txt"
+        Dim file_path_joueurs As String = "\....\..\lst_joueurs.txt"
         'cb_box_p1.Items.AddRange(lst_joueurs_connus)
         'cb_box_p2.Items.AddRange(lst_joueurs_connus)
         'charger_joueurs(mod_fichier_joueurs.reader_of_joueur)
