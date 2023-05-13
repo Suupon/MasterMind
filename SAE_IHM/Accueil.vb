@@ -4,7 +4,11 @@ Imports System.Text
 Public Class Accueil
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim lst_joueurs_connus As String() = IO.File.ReadAllLines("E:\VBA\IHM_SAE\IHM_SAE\lst_joueurs.txt")
+
+
+
         Dim file_path_joueurs As String = "..\..\..\lst_joueurs.txt"
+
         'cb_box_p1.Items.AddRange(lst_joueurs_connus)
         'cb_box_p2.Items.AddRange(lst_joueurs_connus)
         'charger_joueurs(mod_fichier_joueurs.reader_of_joueur)
@@ -66,7 +70,7 @@ Public Class Accueil
     Private Sub btn_lancer_jeu_Click(sender As Object, e As EventArgs) Handles btn_lancer_jeu.Click
 
         If (pseudo_joueurs_different(sender, e)) Then
-            MsgBox("lancer jeu")
+
 
             If (Not mod_Liste_Joueurs.joueur_connu(cb_box_p1.Text)) Then
                 MsgBox("p1 inconu")
@@ -77,7 +81,7 @@ Public Class Accueil
                 MsgBox("p2 inconu")
                 mod_Liste_Joueurs.add_joueur(New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0))
             End If
-
+            Pattern_a_deviner.Show()
             Return
         End If
         MsgBox("pas content")
