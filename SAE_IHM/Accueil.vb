@@ -8,82 +8,64 @@ Public Class Accueil
 
 
         Dim file_path_joueurs As String = "..\..\..\lst_joueurs.txt"
+        mod_fichier_joueurs.load_joueurs()
+        Console.WriteLine(mod_fichier_joueurs.all_joueurs_str)
 
-        'cb_box_p1.Items.AddRange(lst_joueurs_connus)
-        'cb_box_p2.Items.AddRange(lst_joueurs_connus)
-        'charger_joueurs(mod_fichier_joueurs.reader_of_joueur)
-        charger_joueurs(file_path_joueurs)
 
         Dim nom_joueurs_source As New AutoCompleteStringCollection()
         nom_joueurs_source.AddRange(mod_Liste_Joueurs.get_nom_joueurs.ToArray)
-        cb_box_p1.AutoCompleteMode = AutoCompleteMode.Suggest
+        cb_box_p1.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         cb_box_p1.AutoCompleteSource = AutoCompleteSource.CustomSource
         cb_box_p1.AutoCompleteCustomSource = nom_joueurs_source
 
-
-        mod_Liste_Joueurs.print_joueurs()
+        cb_box_p2.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cb_box_p2.AutoCompleteSource = AutoCompleteSource.CustomSource
+        cb_box_p2.AutoCompleteCustomSource = nom_joueurs_source
 
 
 
     End Sub
 
-    Private Sub cb_box_p1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_box_p1.SelectedIndexChanged
-        MsgBox(cb_box_p1.Text)
-    End Sub
-    Private Sub charger_joueurs(file_path_joueurs As String)
-        Dim joueur_info_unsplit As String
-        Dim joueur_info_split As String()
-        Dim reader As New StreamReader(file_path_joueurs, Encoding.Default)
 
-        Dim nom As String
-        Dim score As Integer
-        Dim best_time As Integer 'en sec
-        Dim nb_partie_first As Integer
-        Dim nb_partie_segond As Integer
-        Dim cumul_temp_deviner_combi As Integer ' en sec
 
-        joueur_info_unsplit = reader.ReadLine()
-        joueur_info_split = joueur_info_unsplit.Split(";")
+    Private Function pseudo_joueurs_valident(sender As Object, e As EventArgs) As Boolean
+        If (cb_box_p1.Text.Equals("")) Then
+            MsgBox("saisir un pseudo pour le joueur 1")
+            Return False
 
-        While (Not joueur_info_unsplit.Equals(""))
-
-            nom = joueur_info_split(0)
-            score = CInt(joueur_info_split(1))
-            best_time = CInt(joueur_info_split(2))
-            nb_partie_first = CInt(joueur_info_split(3))
-            nb_partie_segond = CInt(joueur_info_split(4))
-            cumul_temp_deviner_combi = CInt(joueur_info_split(5))
-
-            Dim joueur As New Joueur(nom, score, best_time, nb_partie_first, nb_partie_segond, cumul_temp_deviner_combi)
-            cb_box_p1.Items.Add(nom)
-            cb_box_p2.Items.Add(nom)
-            mod_Liste_Joueurs.add_joueur(joueur)
-            joueur_info_unsplit = reader.ReadLine()
-            joueur_info_split = joueur_info_unsplit.Split(";")
-        End While
-        reader.Close()
-    End Sub
-    Private Function pseudo_joueurs_different(sender As Object, e As EventArgs) As Boolean
+        End If
+        If (cb_box_p2.Text.Equals("")) Then
+            MsgBox("saisir un pseudo pour le joueur 2")
+            Return False
+        End If
         Return Not cb_box_p1.Text.Equals(cb_box_p2.Text)
     End Function
 
     Private Sub btn_lancer_jeu_Click(sender As Object, e As EventArgs) Handles btn_lancer_jeu.Click
-
-        If (pseudo_joueurs_different(sender, e)) Then
+        Dim j As Joueur
+        If (pseudo_joueurs_valident(sender, e)) Then
 
 
             If (Not mod_Liste_Joueurs.joueur_connu(cb_box_p1.Text)) Then
                 MsgBox("p1 inconu")
-                mod_Liste_Joueurs.add_joueur(New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0))
+                j = New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0)
+                mod_Liste_Joueurs.add_joueur(j)
+                'add_joueur_to_file(j)
             End If
 
             If (Not mod_Liste_Joueurs.joueur_connu(cb_box_p2.Text)) Then
                 MsgBox("p2 inconu")
-                mod_Liste_Joueurs.add_joueur(New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0))
+                j = New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0)
+                mod_Liste_Joueurs.add_joueur(j)
+                'add_joueur_to_file(j)
+
             End If
+            Me.Hide()
             Pattern_a_deviner.Show()
             Return
         End If
         MsgBox("pas content")
     End Sub
+
+
 End Class

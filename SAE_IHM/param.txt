@@ -1,0 +1,5 @@
+﻿nb_cases=5
+caratere_possibles=@#$£%
+use_time=true
+timer=90
+nb_essais=15

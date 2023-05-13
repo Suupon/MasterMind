@@ -2,6 +2,7 @@
     Private Joueurs As New List(Of Joueur)
     Private nb_joueurs As Integer = 0
     Sub add_joueur(j As Joueur)
+
         Joueurs.Add(j)
     End Sub
     Public Function get_joueurs() As List(Of Joueur)

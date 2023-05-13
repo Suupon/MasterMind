@@ -25,12 +25,15 @@ Partial Class Accueil
         Me.cb_box_p1 = New System.Windows.Forms.ComboBox()
         Me.cb_box_p2 = New System.Windows.Forms.ComboBox()
         Me.btn_lancer_jeu = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cb_box_p1
         '
+        Me.cb_box_p1.BackColor = System.Drawing.SystemColors.Window
         Me.cb_box_p1.FormattingEnabled = True
-        Me.cb_box_p1.Location = New System.Drawing.Point(338, 97)
+        Me.cb_box_p1.Location = New System.Drawing.Point(338, 118)
         Me.cb_box_p1.Name = "cb_box_p1"
         Me.cb_box_p1.Size = New System.Drawing.Size(121, 23)
         Me.cb_box_p1.TabIndex = 0
@@ -38,7 +41,7 @@ Partial Class Accueil
         'cb_box_p2
         '
         Me.cb_box_p2.FormattingEnabled = True
-        Me.cb_box_p2.Location = New System.Drawing.Point(338, 189)
+        Me.cb_box_p2.Location = New System.Drawing.Point(338, 223)
         Me.cb_box_p2.Name = "cb_box_p2"
         Me.cb_box_p2.Size = New System.Drawing.Size(121, 23)
         Me.cb_box_p2.TabIndex = 1
@@ -52,21 +55,45 @@ Partial Class Accueil
         Me.btn_lancer_jeu.Text = "C'est partie !" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.btn_lancer_jeu.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(367, 83)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "PLAYER 1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(367, 190)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 15)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "PLAYER 2"
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_lancer_jeu)
         Me.Controls.Add(Me.cb_box_p2)
         Me.Controls.Add(Me.cb_box_p1)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Name = "Accueil"
         Me.Text = "Accueil"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents cb_box_p1 As ComboBox
     Friend WithEvents cb_box_p2 As ComboBox
     Friend WithEvents btn_lancer_jeu As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
