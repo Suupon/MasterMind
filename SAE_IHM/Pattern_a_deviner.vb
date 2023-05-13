@@ -12,17 +12,15 @@
 
         If InStr("#@%$£", e.KeyChar) = 0 And e.KeyChar <> vbBack Then
             e.Handled = True
-
         End If
 
     End Sub
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
         Dim cpt As Integer = 0
-
-
         If Txt_1.Text = "" Or Txt_2.Text = "" Or Txt_3.Text = "" Or Txt_4.Text = "" Or Txt_5.Text = "" Then
             cpt += 1
+            MsgBox("Veuillez remplir toutes les cases")
         End If
 
 
@@ -33,7 +31,5 @@
         End If
     End Sub
 
-    Private Sub mastermind_Click(sender As Object, e As EventArgs) Handles mastermind.Click
 
-    End Sub
 End Class
