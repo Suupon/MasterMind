@@ -2,7 +2,7 @@
 Imports System.Text
 Imports System.Text.RegularExpressions
 Module mod_fichier_joueurs
-    Private file_path_joueurs As String = "E:\....\..\lst_joueurs.txt"
+    Private file_path_joueurs As String = "..\..\..\lst_joueurs.txt"
     Public reader_of_joueur As New StreamReader(file_path_joueurs, Encoding.Default)
     Public writer_of_joueur As New StreamWriter(file_path_joueurs)
 
