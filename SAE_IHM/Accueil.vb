@@ -64,5 +64,7 @@ Public Class Accueil
         MsgBox("pas content")
     End Sub
 
-
+    Private Sub btn_param_Click(sender As Object, e As EventArgs) Handles btn_param.Click
+        param.Show()
+    End Sub
 End Class

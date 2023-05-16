@@ -27,6 +27,7 @@ Partial Class Accueil
         Me.btn_lancer_jeu = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_param = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cb_box_p1
@@ -73,11 +74,21 @@ Partial Class Accueil
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "PLAYER 2"
         '
+        'btn_param
+        '
+        Me.btn_param.Location = New System.Drawing.Point(567, 343)
+        Me.btn_param.Name = "btn_param"
+        Me.btn_param.Size = New System.Drawing.Size(75, 23)
+        Me.btn_param.TabIndex = 5
+        Me.btn_param.Text = "Paramètres"
+        Me.btn_param.UseVisualStyleBackColor = True
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_param)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_lancer_jeu)
@@ -96,4 +107,5 @@ Partial Class Accueil
     Friend WithEvents btn_lancer_jeu As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents btn_param As Button
 End Class
