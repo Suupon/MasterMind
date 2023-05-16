@@ -25,20 +25,20 @@
         End If
 
 
-        If cpt = 0 Then
-            Dim tab() As String = {Txt_1.Text, Txt_2.Text, Txt_3.Text, Txt_4.Text, Txt_5.Text}
+        'If cpt = 0 Then
+        Dim tab() As String = {Txt_1.Text, Txt_2.Text, Txt_3.Text, Txt_4.Text, Txt_5.Text}
 
 
-            For i As Integer = 0 To mod_enregistrement.tab.Length - 1
-                If tab(i) = mod_enregistrement.tab(i) Then
+        'For i As Integer = 0 To mod_enregistrement.tab.Length - 1
+        'tab(i) = mod_enregistrement.tab(i) Then
 
 
 
-                End If
-            Next
+        ' End If
+        'Next
 
 
-        End If
+        ' End If
 
     End Sub
 
@@ -49,5 +49,9 @@
 
     Private Sub jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+    End Sub
+
+    Private Sub Txt_5_TextChanged(sender As Object, e As EventArgs) Handles Txt_5.TextChanged
+
     End Sub
 End Class

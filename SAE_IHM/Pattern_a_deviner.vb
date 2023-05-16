@@ -1,35 +1,57 @@
 ﻿Public Class Pattern_a_deviner
+    Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim textbox As TextBox
+        Const panelX As Integer = 34
+        Dim panel_width As Integer = Panel_textbox.Width
+        Const espacement As Integer = 70
+        Dim startX As Integer = panelX + (panel_width - get_nb_case() * espacement) \ 2
 
-    Private Sub Txt_TextChanged(sender As Object, e As EventArgs) Handles Txt_1.TextChanged, Txt_2.TextChanged, Txt_3.TextChanged, Txt_4.TextChanged, Txt_5.TextChanged
-        Dim nextcontrol As Control = GetNextControl(sender, True)
-        sender.MaxLength = 1
-        nextcontrol.Focus()
 
 
-    End Sub
+        For i As Integer = 0 To get_nb_case() - 1
 
-    Private Sub Txt_1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_1.KeyPress, Txt_2.KeyPress, Txt_3.KeyPress, Txt_4.KeyPress, Txt_5.KeyPress
+            textbox = New TextBox()
+            textbox.Location = New System.Drawing.Point(startX + (i - 1) * espacement, 0)
+            textbox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+            textbox.Name = "Txt_" & i
+            textbox.Width = 70
+            textbox.Visible = True
+            textbox.MaxLength = 1
+            Me.Controls.Add(textbox)
+            Me.Panel_textbox.Controls.Add(textbox)
 
-        If InStr("#@%$£", e.KeyChar) = 0 And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
+
+        Next
 
     End Sub
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
-        Dim cpt As Integer = 0
-        If Txt_1.Text = "" Or Txt_2.Text = "" Or Txt_3.Text = "" Or Txt_4.Text = "" Or Txt_5.Text = "" Then
-            cpt += 1
-            MsgBox("Veuillez remplir toutes les cases")
-        End If
+        For i As Integer = 0 To get_nb_case() - 1
+            Dim textbox As TextBox = Panel_textbox.Controls(i)
+            Dim cpt As Integer = 0
 
+            If textbox.Text = "" Then
+                MsgBox("Veuillez remplir toute les cases")
+                cpt += 1
+                Exit For
+            End If
 
-        If cpt = 0 Then
-            Dim tab() As String = {Txt_1.Text, Txt_2.Text, Txt_3.Text, Txt_4.Text, Txt_5.Text}
-            jeu.Show()
-            Me.Close()
-        End If
+            If cpt = 0 Then
+                jeu.Show()
+                Me.Close()
+            End If
+
+        Next
     End Sub
 
+    Private Sub Panel_textbox_Paint(sender As Object, e As PaintEventArgs) Handles Panel_textbox.Paint
+        For Each tb As TextBox In Panel_textbox.Controls
+            GetNextControl(tb, True).Focus()
+        Next
 
+    End Sub
+
+    Private Sub char_guess_Click(sender As Object, e As EventArgs) Handles char_guess.Click
+        mod_param.get_caractere_possibles()
+    End Sub
 End Class
