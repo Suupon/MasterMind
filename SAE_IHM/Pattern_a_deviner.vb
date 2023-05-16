@@ -5,7 +5,7 @@
         Dim panel_width As Integer = Panel_textbox.Width
         Const espacement As Integer = 70
         Dim startX As Integer = panelX + (panel_width - get_nb_case() * espacement) \ 2
-
+        char_guess.Text = mod_param.get_caractere_possibles()
 
 
         For i As Integer = 0 To get_nb_case() - 1
@@ -22,6 +22,8 @@
 
 
         Next
+
+
 
     End Sub
 
@@ -44,14 +46,6 @@
         Next
     End Sub
 
-    Private Sub Panel_textbox_Paint(sender As Object, e As PaintEventArgs) Handles Panel_textbox.Paint
-        For Each tb As TextBox In Panel_textbox.Controls
-            GetNextControl(tb, True).Focus()
-        Next
 
-    End Sub
 
-    Private Sub char_guess_Click(sender As Object, e As EventArgs) Handles char_guess.Click
-        mod_param.get_caractere_possibles()
-    End Sub
 End Class
