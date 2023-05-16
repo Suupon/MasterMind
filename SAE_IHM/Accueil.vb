@@ -5,22 +5,15 @@ Public Class Accueil
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim lst_joueurs_connus As String() = IO.File.ReadAllLines("E:\VBA\IHM_SAE\IHM_SAE\lst_joueurs.txt")
 
-
-
-        Dim file_path_joueurs As String = "..\..\..\lst_joueurs.txt"
         mod_fichier_joueurs.load_joueurs()
-        Console.WriteLine(mod_fichier_joueurs.all_joueurs_str)
+        mod_param.load_param()
+        mod_param.print_param()
 
 
         Dim nom_joueurs_source As New AutoCompleteStringCollection()
         nom_joueurs_source.AddRange(mod_Liste_Joueurs.get_nom_joueurs.ToArray)
-        cb_box_p1.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        cb_box_p1.AutoCompleteSource = AutoCompleteSource.CustomSource
-        cb_box_p1.AutoCompleteCustomSource = nom_joueurs_source
-
-        cb_box_p2.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        cb_box_p2.AutoCompleteSource = AutoCompleteSource.CustomSource
-        cb_box_p2.AutoCompleteCustomSource = nom_joueurs_source
+        autocompletion_cb_box_joueurs(cb_box_p1, nom_joueurs_source)
+        autocompletion_cb_box_joueurs(cb_box_p2, nom_joueurs_source)
 
 
 
@@ -40,7 +33,11 @@ Public Class Accueil
         End If
         Return Not cb_box_p1.Text.Equals(cb_box_p2.Text)
     End Function
-
+    Sub autocompletion_cb_box_joueurs(cb As ComboBox, nom_joueurs_source As AutoCompleteStringCollection)
+        cb.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cb.AutoCompleteSource = AutoCompleteSource.CustomSource
+        cb.AutoCompleteCustomSource = nom_joueurs_source
+    End Sub
     Private Sub btn_lancer_jeu_Click(sender As Object, e As EventArgs) Handles btn_lancer_jeu.Click
         Dim j As Joueur
         If (pseudo_joueurs_valident(sender, e)) Then
