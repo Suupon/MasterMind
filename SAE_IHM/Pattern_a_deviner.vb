@@ -49,13 +49,16 @@ Public Class Pattern_a_deviner
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
         Dim valeurs_txt As New List(Of String)
-        Dim indices As New List(Of Integer)
+
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible Then
                 valeurs_txt.Add(textBox.Text)
             End If
         Next
+
+
+
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
@@ -65,10 +68,6 @@ Public Class Pattern_a_deviner
         Next
 
 
-        For Each valeur As String In valeurs_txt
-            Dim indice As Integer = valeurs_txt.IndexOf(valeur)
-            indices.Add(indice)
-        Next
 
 
         jeu.Show()
