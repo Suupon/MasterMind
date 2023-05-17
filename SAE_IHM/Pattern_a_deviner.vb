@@ -12,7 +12,7 @@ Public Class Pattern_a_deviner
 
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
-
+            textBox.MaxLength = 1
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
         Next
 
@@ -48,25 +48,12 @@ Public Class Pattern_a_deviner
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
-        Dim valeurs_txt As New List(Of String)
-
-
-        For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
-            If textBox.Visible Then
-                valeurs_txt.Add(textBox.Text)
-            End If
-        Next
-
-
-
-
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
                 MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
                 Return
             End If
         Next
-
 
 
 
