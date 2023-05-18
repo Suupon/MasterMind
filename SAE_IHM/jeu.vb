@@ -10,12 +10,7 @@
         Timer1.Start()
 
         char_guess.Text = get_caractere_possibles()
-
-
-
         AfficherTextBox()
-
-
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             textBox.MaxLength = 1
@@ -60,22 +55,37 @@
                 MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
                 Return
             End If
-            If textBox.Visible = True AndAlso Not String.IsNullOrEmpty(textBox.Text) Then
-                mod_enregistrement.tab2(MAX_NB_CASES) = textBox.Text
+
+        Next
+
+        ReDim tab2(get_nb_case() - 1)
+
+
+        Dim index As Integer = 0
+        For Each control As Control In Panel_textbox.Controls
+            If TypeOf control Is TextBox AndAlso control.Visible Then
+                tab2(index) = DirectCast(control, TextBox).Text
+                index += 1
             End If
         Next
 
-        For Each tb As TextBox In Panel_textbox.Controls.OfType(Of TextBox)
-            For i As Integer = 0 To get_nb_case() - 1
-                For j As Integer = 0 To get_nb_case() - 1
-                    If tab1(i) = tab2(j) Then
-                        tb.ForeColor = Color.Blue
-                    Else
-                        tb.ForeColor = Color.Black
-                    End If
-                Next
+
+
+        For i As Integer = 0 To mod_enregistrement.tab1.Length - 1
+            For j As Integer = 0 To tab2.Length - 1
+                If mod_enregistrement.tab1(i) = mod_enregistrement.tab2(i) Then
+                    Panel_textbox.Controls(i).ForeColor = Color.Green
+                ElseIf mod_enregistrement.tab1(i) = mod_enregistrement.tab2(j) AndAlso i <> j Then
+                    Panel_textbox.Controls(i).ForeColor = Color.Blue
+                Else
+                    Panel_textbox.Controls(i).ForeColor = Color.Black
+                End If
+
             Next
         Next
 
+        ListBox1.Items.AddRange(tab2)
     End Sub
+
+
 End Class

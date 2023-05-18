@@ -33,7 +33,6 @@ Partial Class jeu
         Me.Present_et_Bien_Place = New System.Windows.Forms.Label()
         Me.Btn_bye = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel_textbox = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -45,6 +44,7 @@ Partial Class jeu
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.textbox10 = New System.Windows.Forms.TextBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -123,9 +123,9 @@ Partial Class jeu
         Me.Present.Location = New System.Drawing.Point(599, 225)
         Me.Present.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Present.Name = "Present"
-        Me.Present.Size = New System.Drawing.Size(111, 15)
+        Me.Present.Size = New System.Drawing.Size(46, 15)
         Me.Present.TabIndex = 29
-        Me.Present.Text = "Caractères Jouable :"
+        Me.Present.Text = "Présent"
         '
         'Present_et_Bien_Place
         '
@@ -153,15 +153,6 @@ Partial Class jeu
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 90000
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(266, 222)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(198, 464)
-        Me.RichTextBox1.TabIndex = 33
-        Me.RichTextBox1.Text = ""
         '
         'Panel_textbox
         '
@@ -251,13 +242,23 @@ Partial Class jeu
         Me.textbox10.Size = New System.Drawing.Size(40, 23)
         Me.textbox10.TabIndex = 9
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.HorizontalScrollbar = True
+        Me.ListBox1.ItemHeight = 15
+        Me.ListBox1.Location = New System.Drawing.Point(271, 200)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(217, 439)
+        Me.ListBox1.TabIndex = 35
+        '
         'jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 785)
+        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Panel_textbox)
-        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Btn_bye)
         Me.Controls.Add(Me.Present_et_Bien_Place)
         Me.Controls.Add(Me.Present)
@@ -286,7 +287,6 @@ Partial Class jeu
     Friend WithEvents Present_et_Bien_Place As Label
     Friend WithEvents Btn_bye As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Panel_textbox As Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
@@ -298,4 +298,5 @@ Partial Class jeu
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents textbox10 As TextBox
+    Friend WithEvents ListBox1 As ListBox
 End Class

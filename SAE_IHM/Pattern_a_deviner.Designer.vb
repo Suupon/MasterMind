@@ -206,5 +206,4 @@ Partial Class Pattern_a_deviner
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents textbox10 As TextBox
 
-
 End Class
