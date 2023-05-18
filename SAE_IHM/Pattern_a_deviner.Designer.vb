@@ -34,8 +34,8 @@ Partial Class Pattern_a_deviner
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,6 +104,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(42, 23)
         Me.TextBox2.TabIndex = 1
+        Me.TextBox2.Visible = False
         '
         'TextBox5
         '
@@ -111,6 +112,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(42, 23)
         Me.TextBox5.TabIndex = 4
+        Me.TextBox5.Visible = False
         '
         'TextBox9
         '
@@ -118,6 +120,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(42, 23)
         Me.TextBox9.TabIndex = 8
+        Me.TextBox9.Visible = False
         '
         'TextBox1
         '
@@ -125,6 +128,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(42, 23)
         Me.TextBox1.TabIndex = 0
+        Me.TextBox1.Visible = False
         '
         'TextBox3
         '
@@ -132,6 +136,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(42, 23)
         Me.TextBox3.TabIndex = 2
+        Me.TextBox3.Visible = False
         '
         'TextBox8
         '
@@ -139,6 +144,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(42, 23)
         Me.TextBox8.TabIndex = 7
+        Me.TextBox8.Visible = False
         '
         'TextBox7
         '
@@ -146,13 +152,7 @@ Partial Class Pattern_a_deviner
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(42, 23)
         Me.TextBox7.TabIndex = 6
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(308, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox6.TabIndex = 5
+        Me.TextBox7.Visible = False
         '
         'TextBox4
         '
@@ -160,6 +160,15 @@ Partial Class Pattern_a_deviner
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(42, 23)
         Me.TextBox4.TabIndex = 3
+        Me.TextBox4.Visible = False
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(308, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox6.TabIndex = 5
+        Me.TextBox6.Visible = False
         '
         'Pattern_a_deviner
         '
