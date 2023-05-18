@@ -12,9 +12,9 @@
         char_guess.Text = get_caractere_possibles()
 
 
-        For i As Integer = 0 To get_nb_case() - 1
-            AfficherTextBox()
-        Next
+
+        AfficherTextBox()
+
 
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
@@ -23,11 +23,14 @@
         Next
     End Sub
     Private Sub AfficherTextBox()
+
         Dim nbTextBox As Integer = get_nb_case()
 
         For i As Integer = 0 To Panel_textbox.Controls.Count - 1
+
             If TypeOf Panel_textbox.Controls(i) Is TextBox Then
-                Dim textBox As TextBox = DirectCast(Panel_textbox.Controls(i), TextBox)
+                Dim textBox As TextBox = Panel_textbox.Controls(i)
+
                 If i < nbTextBox Then
                     textBox.Visible = True
                 Else

@@ -1,4 +1,4 @@
 ﻿Module mod_enregistrement
-    Public tab() As Char
+    Public values As List(Of String) = New List(Of String)()
 
 End Module

@@ -33,17 +33,18 @@ Partial Class jeu
         Me.Present_et_Bien_Place = New System.Windows.Forms.Label()
         Me.Btn_bye = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel_textbox = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Panel_textbox = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.textbox10 = New System.Windows.Forms.TextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -153,86 +154,6 @@ Partial Class jeu
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 90000
         '
-        'Panel_textbox
-        '
-        Me.Panel_textbox.Controls.Add(Me.TextBox2)
-        Me.Panel_textbox.Controls.Add(Me.TextBox5)
-        Me.Panel_textbox.Controls.Add(Me.TextBox9)
-        Me.Panel_textbox.Controls.Add(Me.TextBox7)
-        Me.Panel_textbox.Controls.Add(Me.TextBox1)
-        Me.Panel_textbox.Controls.Add(Me.TextBox3)
-        Me.Panel_textbox.Controls.Add(Me.TextBox6)
-        Me.Panel_textbox.Controls.Add(Me.TextBox8)
-        Me.Panel_textbox.Controls.Add(Me.TextBox4)
-        Me.Panel_textbox.Location = New System.Drawing.Point(84, 119)
-        Me.Panel_textbox.Name = "Panel_textbox"
-        Me.Panel_textbox.Size = New System.Drawing.Size(508, 37)
-        Me.Panel_textbox.TabIndex = 32
-        Me.Panel_textbox.TabStop = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(116, 4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox2.TabIndex = 1
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(260, 4)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox5.TabIndex = 4
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(452, 4)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox9.TabIndex = 8
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(356, 4)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox7.TabIndex = 6
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(68, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox1.TabIndex = 0
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(164, 4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox3.TabIndex = 2
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(308, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox6.TabIndex = 5
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(404, 4)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox8.TabIndex = 7
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(212, 4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox4.TabIndex = 3
-        '
         'RichTextBox1
         '
         Me.RichTextBox1.Location = New System.Drawing.Point(266, 222)
@@ -242,13 +163,101 @@ Partial Class jeu
         Me.RichTextBox1.TabIndex = 33
         Me.RichTextBox1.Text = ""
         '
+        'Panel_textbox
+        '
+        Me.Panel_textbox.Controls.Add(Me.TextBox1)
+        Me.Panel_textbox.Controls.Add(Me.TextBox2)
+        Me.Panel_textbox.Controls.Add(Me.TextBox3)
+        Me.Panel_textbox.Controls.Add(Me.TextBox4)
+        Me.Panel_textbox.Controls.Add(Me.TextBox5)
+        Me.Panel_textbox.Controls.Add(Me.TextBox6)
+        Me.Panel_textbox.Controls.Add(Me.TextBox7)
+        Me.Panel_textbox.Controls.Add(Me.TextBox8)
+        Me.Panel_textbox.Controls.Add(Me.TextBox9)
+        Me.Panel_textbox.Controls.Add(Me.textbox10)
+        Me.Panel_textbox.Location = New System.Drawing.Point(86, 119)
+        Me.Panel_textbox.Name = "Panel_textbox"
+        Me.Panel_textbox.Size = New System.Drawing.Size(487, 37)
+        Me.Panel_textbox.TabIndex = 34
+        Me.Panel_textbox.TabStop = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(24, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox1.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(70, 4)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox2.TabIndex = 1
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(116, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox3.TabIndex = 2
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(162, 4)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox4.TabIndex = 3
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(208, 4)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox5.TabIndex = 4
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(254, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox6.TabIndex = 5
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(300, 4)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox7.TabIndex = 6
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(346, 4)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox8.TabIndex = 7
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(392, 4)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox9.TabIndex = 8
+        '
+        'textbox10
+        '
+        Me.textbox10.Location = New System.Drawing.Point(438, 4)
+        Me.textbox10.Name = "textbox10"
+        Me.textbox10.Size = New System.Drawing.Size(40, 23)
+        Me.textbox10.TabIndex = 9
+        '
         'jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 785)
-        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Panel_textbox)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Btn_bye)
         Me.Controls.Add(Me.Present_et_Bien_Place)
         Me.Controls.Add(Me.Present)
@@ -277,15 +286,16 @@ Partial Class jeu
     Friend WithEvents Present_et_Bien_Place As Label
     Friend WithEvents Btn_bye As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Panel_textbox As Panel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Panel_textbox As Panel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents textbox10 As TextBox
 End Class

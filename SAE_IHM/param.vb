@@ -1,6 +1,6 @@
 ﻿Public Class param
     Private Sub param_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ' le 5 ne s'affiche quand on lance le form param
         load_nb_case_items()
         cb_box_nb_cases.Text = mod_param.get_nb_case
         txt_box_car_possibles.Text = mod_param.get_caractere_possibles
@@ -18,12 +18,12 @@
         End If
     End Sub
     Private Sub load_nb_case_items()
-        cb_box_nb_cases.Items.Add(mod_param.MIN_NB_CASES & "(min)")
+        cb_box_nb_cases.Items.Add(mod_param.MIN_NB_CASES & " (min)")
         For i As Integer = 4 To mod_param.MAX_NB_CASES - 1
-            cb_box_nb_cases.Items.Add(i)
+            cb_box_nb_cases.Items.Add(i & " ")
 
         Next
-        cb_box_nb_cases.Items.Add(mod_param.MAX_NB_CASES & "(max)")
+        cb_box_nb_cases.Items.Add(mod_param.MAX_NB_CASES & " (max)")
 
     End Sub
     Private Sub ck_use_time_CheckedChanged(sender As Object, e As EventArgs) Handles ck_use_time.CheckedChanged
@@ -43,15 +43,13 @@
         End If
     End Sub
 
-    Private Sub cb_box_nb_cases_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_box_nb_cases.SelectedIndexChanged
 
-    End Sub
 
     Private Sub txt_box_nb_essais_TextChanged(sender As Object, e As KeyPressEventArgs) Handles txt_box_nb_essais.KeyPress, txt_box_timer.KeyPress
 
 
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            e.Handled = True ' Annule l'événement de saisie
+            e.Handled = True
         End If
     End Sub
 
@@ -64,7 +62,7 @@
             End If
         Next
         mod_param.set_caratere_possible(txt_box_car_possibles.Text)
-        mod_param.set_nb_case(CInt(cb_box_nb_cases.Text.Substring(0, 1)))
+        mod_param.set_nb_case(CInt(cb_box_nb_cases.Text.Substring(0, 2)))
         mod_param.set_nb_essais(CInt(txt_box_nb_essais.Text))
         If (ck_use_time.Checked) Then
             mod_param.set_use_time(True)
@@ -78,4 +76,6 @@
 
 
     End Sub
+
+
 End Class
