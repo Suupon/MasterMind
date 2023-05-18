@@ -27,7 +27,6 @@ Partial Class jeu
         Me.char_jouable = New System.Windows.Forms.Label()
         Me.btn_deviner = New System.Windows.Forms.Button()
         Me.mastermind = New System.Windows.Forms.Label()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Code_Couleur = New System.Windows.Forms.Label()
         Me.Absent = New System.Windows.Forms.Label()
         Me.Present = New System.Windows.Forms.Label()
@@ -44,6 +43,7 @@ Partial Class jeu
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -91,14 +91,6 @@ Partial Class jeu
         Me.mastermind.Size = New System.Drawing.Size(96, 17)
         Me.mastermind.TabIndex = 17
         Me.mastermind.Text = "Master Mind"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(259, 251)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(197, 438)
-        Me.ListView1.TabIndex = 26
-        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'Code_Couleur
         '
@@ -241,18 +233,27 @@ Partial Class jeu
         Me.TextBox4.Size = New System.Drawing.Size(42, 23)
         Me.TextBox4.TabIndex = 3
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(266, 222)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(198, 464)
+        Me.RichTextBox1.TabIndex = 33
+        Me.RichTextBox1.Text = ""
+        '
         'jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 785)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Panel_textbox)
         Me.Controls.Add(Me.Btn_bye)
         Me.Controls.Add(Me.Present_et_Bien_Place)
         Me.Controls.Add(Me.Present)
         Me.Controls.Add(Me.Absent)
         Me.Controls.Add(Me.Code_Couleur)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.char_guess)
         Me.Controls.Add(Me.char_jouable)
         Me.Controls.Add(Me.btn_deviner)
@@ -270,7 +271,6 @@ Partial Class jeu
     Friend WithEvents char_jouable As Label
     Friend WithEvents btn_deviner As Button
     Friend WithEvents mastermind As Label
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents Code_Couleur As Label
     Friend WithEvents Absent As Label
     Friend WithEvents Present As Label
@@ -287,4 +287,5 @@ Partial Class jeu
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

@@ -4,11 +4,8 @@ Public Class Pattern_a_deviner
     Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         char_guess.Text = get_caractere_possibles()
+        AfficherTextBox()
 
-
-        For i As Integer = 0 To get_nb_case() - 1
-            AfficherTextBox()
-        Next
 
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
@@ -46,8 +43,10 @@ Public Class Pattern_a_deviner
         End If
     End Sub
 
-    Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
+
+    Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
+        Dim valeurs As New List(Of String)
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
                 MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
@@ -56,9 +55,12 @@ Public Class Pattern_a_deviner
         Next
 
 
-
         jeu.Show()
         Me.Close()
+
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
 
     End Sub
 End Class
