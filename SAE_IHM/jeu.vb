@@ -10,11 +10,8 @@
         Timer1.Start()
 
         char_guess.Text = get_caractere_possibles()
+        AfficherTextBox()
 
-
-        For i As Integer = 0 To get_nb_case() - 1
-            AfficherTextBox()
-        Next
 
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
