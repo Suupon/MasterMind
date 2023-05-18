@@ -53,4 +53,29 @@
         End If
     End Sub
 
+    Private Sub btn_deviner_Click(sender As Object, e As EventArgs) Handles btn_deviner.Click
+
+        For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
+            If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
+                MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
+                Return
+            End If
+            If textBox.Visible = True AndAlso Not String.IsNullOrEmpty(textBox.Text) Then
+                mod_enregistrement.tab2(MAX_NB_CASES) = textBox.Text
+            End If
+        Next
+
+        For Each tb As TextBox In Panel_textbox.Controls.OfType(Of TextBox)
+            For i As Integer = 0 To get_nb_case() - 1
+                For j As Integer = 0 To get_nb_case() - 1
+                    If tab1(i) = tab2(j) Then
+                        tb.ForeColor = Color.Blue
+                    Else
+                        tb.ForeColor = Color.Black
+                    End If
+                Next
+            Next
+        Next
+
+    End Sub
 End Class

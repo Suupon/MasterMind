@@ -55,13 +55,11 @@ Public Class Pattern_a_deviner
                 MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
                 Return
             End If
-
-        Next
-        For Each tb As TextBox In Panel_textbox.Controls.OfType(Of TextBox)
-            If tb.Visible = True Then
-                mod_enregistrement.values.Add(tb.Text)
+            If textBox.Visible = True AndAlso Not String.IsNullOrEmpty(textBox.Text) Then
+                mod_enregistrement.tab1(MAX_NB_CASES) = textBox.Text
             End If
         Next
+
 
 
         jeu.Show()
