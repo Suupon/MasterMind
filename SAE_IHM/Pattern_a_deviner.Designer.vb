@@ -27,15 +27,11 @@ Partial Class Pattern_a_deviner
         Me.char_jouable = New System.Windows.Forms.Label()
         Me.btn_cacher = New System.Windows.Forms.Button()
         Me.Panel_textbox = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Txt_6 = New System.Windows.Forms.TextBox()
+        Me.Txt_7 = New System.Windows.Forms.TextBox()
+        Me.Txt_8 = New System.Windows.Forms.TextBox()
+        Me.Txt_9 = New System.Windows.Forms.TextBox()
+        Me.Txt_10 = New System.Windows.Forms.TextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -81,18 +77,49 @@ Partial Class Pattern_a_deviner
         Me.btn_cacher.Text = "Cacher"
         Me.btn_cacher.UseVisualStyleBackColor = True
         '
+        'Txt_5
+        '
+        Me.Txt_5.Location = New System.Drawing.Point(302, 31)
+        Me.Txt_5.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Txt_5.Name = "Txt_5"
+        Me.Txt_5.Size = New System.Drawing.Size(58, 23)
+        Me.Txt_5.TabIndex = 13
+        '
+        'Txt_4
+        '
+        Me.Txt_4.Location = New System.Drawing.Point(236, 31)
+        Me.Txt_4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Txt_4.Name = "Txt_4"
+        Me.Txt_4.Size = New System.Drawing.Size(58, 23)
+        Me.Txt_4.TabIndex = 12
+        '
+        'Txt_3
+        '
+        Me.Txt_3.Location = New System.Drawing.Point(170, 31)
+        Me.Txt_3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Txt_3.Name = "Txt_3"
+        Me.Txt_3.Size = New System.Drawing.Size(58, 23)
+        Me.Txt_3.TabIndex = 11
+        '
+        'Txt_2
+        '
+        Me.Txt_2.Location = New System.Drawing.Point(104, 31)
+        Me.Txt_2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Txt_2.Name = "Txt_2"
+        Me.Txt_2.Size = New System.Drawing.Size(58, 23)
+        Me.Txt_2.TabIndex = 10
+        '
+        'Txt_1
+        '
+        Me.Txt_1.Location = New System.Drawing.Point(38, 31)
+        Me.Txt_1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Txt_1.Name = "Txt_1"
+        Me.Txt_1.Size = New System.Drawing.Size(58, 23)
+        Me.Txt_1.TabIndex = 9
+        '
         'Panel_textbox
         '
-        Me.Panel_textbox.Controls.Add(Me.TextBox2)
-        Me.Panel_textbox.Controls.Add(Me.TextBox5)
-        Me.Panel_textbox.Controls.Add(Me.TextBox9)
-        Me.Panel_textbox.Controls.Add(Me.TextBox1)
-        Me.Panel_textbox.Controls.Add(Me.TextBox3)
-        Me.Panel_textbox.Controls.Add(Me.TextBox8)
-        Me.Panel_textbox.Controls.Add(Me.TextBox7)
-        Me.Panel_textbox.Controls.Add(Me.TextBox4)
-        Me.Panel_textbox.Controls.Add(Me.TextBox6)
-        Me.Panel_textbox.Location = New System.Drawing.Point(170, 164)
+        Me.Panel_textbox.Location = New System.Drawing.Point(34, 179)
         Me.Panel_textbox.Name = "Panel_textbox"
         Me.Panel_textbox.Size = New System.Drawing.Size(508, 37)
         Me.Panel_textbox.TabIndex = 17
@@ -121,54 +148,6 @@ Partial Class Pattern_a_deviner
         Me.TextBox9.Size = New System.Drawing.Size(42, 23)
         Me.TextBox9.TabIndex = 8
         Me.TextBox9.Visible = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(68, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.Visible = False
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(164, 3)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox3.TabIndex = 2
-        Me.TextBox3.Visible = False
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(404, 4)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox8.TabIndex = 7
-        Me.TextBox8.Visible = False
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(356, 3)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox7.TabIndex = 6
-        Me.TextBox7.Visible = False
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(212, 4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox4.TabIndex = 3
-        Me.TextBox4.Visible = False
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(308, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox6.TabIndex = 5
-        Me.TextBox6.Visible = False
         '
         'Pattern_a_deviner
         '
