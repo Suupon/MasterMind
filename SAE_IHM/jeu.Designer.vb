@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class jeu
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,13 @@ Partial Class jeu
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.char_guess = New System.Windows.Forms.Label()
         Me.char_jouable = New System.Windows.Forms.Label()
         Me.btn_deviner = New System.Windows.Forms.Button()
         Me.mastermind = New System.Windows.Forms.Label()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Code_Couleur = New System.Windows.Forms.Label()
         Me.Absent = New System.Windows.Forms.Label()
         Me.Present = New System.Windows.Forms.Label()
@@ -35,16 +34,16 @@ Partial Class jeu
         Me.Btn_bye = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_textbox = New System.Windows.Forms.Panel()
-        Me.Txt_10 = New System.Windows.Forms.TextBox()
-        Me.Txt_9 = New System.Windows.Forms.TextBox()
-        Me.Txt_8 = New System.Windows.Forms.TextBox()
-        Me.Txt_7 = New System.Windows.Forms.TextBox()
-        Me.Txt_6 = New System.Windows.Forms.TextBox()
-        Me.Txt_1 = New System.Windows.Forms.TextBox()
-        Me.Txt_2 = New System.Windows.Forms.TextBox()
-        Me.Txt_3 = New System.Windows.Forms.TextBox()
-        Me.Txt_4 = New System.Windows.Forms.TextBox()
-        Me.Txt_5 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,14 +91,6 @@ Partial Class jeu
         Me.mastermind.Size = New System.Drawing.Size(96, 17)
         Me.mastermind.TabIndex = 17
         Me.mastermind.Text = "Master Mind"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(259, 251)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(197, 438)
-        Me.ListView1.TabIndex = 26
-        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'Code_Couleur
         '
@@ -164,118 +155,105 @@ Partial Class jeu
         '
         'Panel_textbox
         '
-        Me.Panel_textbox.Controls.Add(Me.Txt_10)
-        Me.Panel_textbox.Controls.Add(Me.Txt_9)
-        Me.Panel_textbox.Controls.Add(Me.Txt_8)
-        Me.Panel_textbox.Controls.Add(Me.Txt_7)
-        Me.Panel_textbox.Controls.Add(Me.Txt_6)
-        Me.Panel_textbox.Controls.Add(Me.Txt_1)
-        Me.Panel_textbox.Controls.Add(Me.Txt_2)
-        Me.Panel_textbox.Controls.Add(Me.Txt_3)
-        Me.Panel_textbox.Controls.Add(Me.Txt_4)
-        Me.Panel_textbox.Controls.Add(Me.Txt_5)
-        Me.Panel_textbox.Location = New System.Drawing.Point(137, 92)
+        Me.Panel_textbox.Controls.Add(Me.TextBox2)
+        Me.Panel_textbox.Controls.Add(Me.TextBox5)
+        Me.Panel_textbox.Controls.Add(Me.TextBox9)
+        Me.Panel_textbox.Controls.Add(Me.TextBox7)
+        Me.Panel_textbox.Controls.Add(Me.TextBox1)
+        Me.Panel_textbox.Controls.Add(Me.TextBox3)
+        Me.Panel_textbox.Controls.Add(Me.TextBox6)
+        Me.Panel_textbox.Controls.Add(Me.TextBox8)
+        Me.Panel_textbox.Controls.Add(Me.TextBox4)
+        Me.Panel_textbox.Location = New System.Drawing.Point(84, 119)
         Me.Panel_textbox.Name = "Panel_textbox"
-        Me.Panel_textbox.Size = New System.Drawing.Size(429, 149)
+        Me.Panel_textbox.Size = New System.Drawing.Size(508, 37)
         Me.Panel_textbox.TabIndex = 32
+        Me.Panel_textbox.TabStop = True
         '
-        'Txt_10
+        'TextBox2
         '
-        Me.Txt_10.Location = New System.Drawing.Point(302, 77)
-        Me.Txt_10.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_10.Name = "Txt_10"
-        Me.Txt_10.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_10.TabIndex = 18
-        Me.Txt_10.Visible = False
+        Me.TextBox2.Location = New System.Drawing.Point(116, 4)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox2.TabIndex = 1
         '
-        'Txt_9
+        'TextBox5
         '
-        Me.Txt_9.Location = New System.Drawing.Point(236, 77)
-        Me.Txt_9.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_9.Name = "Txt_9"
-        Me.Txt_9.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_9.TabIndex = 17
-        Me.Txt_9.Visible = False
+        Me.TextBox5.Location = New System.Drawing.Point(260, 4)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox5.TabIndex = 4
         '
-        'Txt_8
+        'TextBox9
         '
-        Me.Txt_8.Location = New System.Drawing.Point(170, 77)
-        Me.Txt_8.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_8.Name = "Txt_8"
-        Me.Txt_8.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_8.TabIndex = 16
-        Me.Txt_8.Visible = False
+        Me.TextBox9.Location = New System.Drawing.Point(452, 4)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox9.TabIndex = 8
         '
-        'Txt_7
+        'TextBox7
         '
-        Me.Txt_7.Location = New System.Drawing.Point(104, 77)
-        Me.Txt_7.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_7.Name = "Txt_7"
-        Me.Txt_7.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_7.TabIndex = 15
-        Me.Txt_7.Visible = False
+        Me.TextBox7.Location = New System.Drawing.Point(356, 4)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox7.TabIndex = 6
         '
-        'Txt_6
+        'TextBox1
         '
-        Me.Txt_6.Location = New System.Drawing.Point(38, 77)
-        Me.Txt_6.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_6.Name = "Txt_6"
-        Me.Txt_6.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_6.TabIndex = 14
-        Me.Txt_6.Visible = False
+        Me.TextBox1.Location = New System.Drawing.Point(68, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox1.TabIndex = 0
         '
-        'Txt_1
+        'TextBox3
         '
-        Me.Txt_1.Location = New System.Drawing.Point(38, 31)
-        Me.Txt_1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_1.Name = "Txt_1"
-        Me.Txt_1.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_1.TabIndex = 9
+        Me.TextBox3.Location = New System.Drawing.Point(164, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox3.TabIndex = 2
         '
-        'Txt_2
+        'TextBox6
         '
-        Me.Txt_2.Location = New System.Drawing.Point(104, 31)
-        Me.Txt_2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_2.Name = "Txt_2"
-        Me.Txt_2.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_2.TabIndex = 10
+        Me.TextBox6.Location = New System.Drawing.Point(308, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox6.TabIndex = 5
         '
-        'Txt_3
+        'TextBox8
         '
-        Me.Txt_3.Location = New System.Drawing.Point(170, 31)
-        Me.Txt_3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_3.Name = "Txt_3"
-        Me.Txt_3.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_3.TabIndex = 11
+        Me.TextBox8.Location = New System.Drawing.Point(404, 4)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox8.TabIndex = 7
         '
-        'Txt_4
+        'TextBox4
         '
-        Me.Txt_4.Location = New System.Drawing.Point(236, 31)
-        Me.Txt_4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_4.Name = "Txt_4"
-        Me.Txt_4.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_4.TabIndex = 12
+        Me.TextBox4.Location = New System.Drawing.Point(212, 4)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(42, 23)
+        Me.TextBox4.TabIndex = 3
         '
-        'Txt_5
+        'RichTextBox1
         '
-        Me.Txt_5.Location = New System.Drawing.Point(302, 31)
-        Me.Txt_5.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_5.Name = "Txt_5"
-        Me.Txt_5.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_5.TabIndex = 13
+        Me.RichTextBox1.Location = New System.Drawing.Point(266, 222)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(198, 464)
+        Me.RichTextBox1.TabIndex = 33
+        Me.RichTextBox1.Text = ""
         '
         'jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(790, 785)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Panel_textbox)
         Me.Controls.Add(Me.Btn_bye)
         Me.Controls.Add(Me.Present_et_Bien_Place)
         Me.Controls.Add(Me.Present)
         Me.Controls.Add(Me.Absent)
         Me.Controls.Add(Me.Code_Couleur)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.char_guess)
         Me.Controls.Add(Me.char_jouable)
         Me.Controls.Add(Me.btn_deviner)
@@ -293,7 +271,6 @@ Partial Class jeu
     Friend WithEvents char_jouable As Label
     Friend WithEvents btn_deviner As Button
     Friend WithEvents mastermind As Label
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents Code_Couleur As Label
     Friend WithEvents Absent As Label
     Friend WithEvents Present As Label
@@ -301,14 +278,14 @@ Partial Class jeu
     Friend WithEvents Btn_bye As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel_textbox As Panel
-    Friend WithEvents Txt_10 As TextBox
-    Friend WithEvents Txt_9 As TextBox
-    Friend WithEvents Txt_8 As TextBox
-    Friend WithEvents Txt_7 As TextBox
-    Friend WithEvents Txt_6 As TextBox
-    Friend WithEvents Txt_1 As TextBox
-    Friend WithEvents Txt_2 As TextBox
-    Friend WithEvents Txt_3 As TextBox
-    Friend WithEvents Txt_4 As TextBox
-    Friend WithEvents Txt_5 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

@@ -25,7 +25,7 @@ Module mod_param
         Console.WriteLine(use_time)
         Console.WriteLine(timer)
         Console.WriteLine(nb_essais)
-        ' a supprimé
+
     End Sub
 
     Public Function get_nb_case() As Integer

@@ -12,15 +12,21 @@ Public Class Pattern_a_deviner
 
     End Sub
     Private Sub AfficherTextBox()
+
         Dim nbTextBox As Integer = get_nb_case()
+        If nbTextBox = MAX_NB_CASES Then
+            For Each control As Control In Panel_textbox.Controls
+                If TypeOf control Is TextBox Then
+                    control.Visible = True
+                End If
+            Next
+        End If
 
         For i As Integer = 0 To Panel_textbox.Controls.Count - 1
 
             If TypeOf Panel_textbox.Controls(i) Is TextBox Then
                 Dim textBox As TextBox = Panel_textbox.Controls(i)
-                If nbTextBox = MAX_NB_CASES Then
-                    textBox.Visible = True
-                End If
+
                 If i < nbTextBox Then
                     textBox.Visible = True
                 Else
@@ -30,6 +36,10 @@ Public Class Pattern_a_deviner
         Next
 
     End Sub
+    Private Sub RestrictCharacters(sender As Object, e As KeyPressEventArgs)
+
+        Dim allowedChars As String = mod_param.get_caractere_possibles
+
     Private Sub RestrictCharacters(sender As Object, e As KeyPressEventArgs)
 
         Dim allowedChars As String = mod_param.get_caractere_possibles
