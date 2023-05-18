@@ -8,16 +8,34 @@ Public Class Pattern_a_deviner
             textBox.MaxLength = 1
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
         Next
+        AfficherTextBox()
+
+    End Sub
+    Private Sub AfficherTextBox()
+
+        Dim nbTextBox As Integer = get_nb_case()
+        If nbTextBox = MAX_NB_CASES Then
+            For Each control As Control In Panel_textbox.Controls
+                If TypeOf control Is TextBox Then
+                    control.Visible = True
+                End If
+            Next
+        End If
 
         For i As Integer = 0 To Panel_textbox.Controls.Count - 1
 
-            While i < get_nb_case() - 1
-                Panel_textbox.Controls(i).Visible = True
-            End While
+            If TypeOf Panel_textbox.Controls(i) Is TextBox Then
+                Dim textBox As TextBox = Panel_textbox.Controls(i)
 
+                If i < nbTextBox Then
+                    textBox.Visible = True
+                Else
+                    textBox.Visible = False
+                End If
+            End If
         Next
-    End Sub
 
+    End Sub
 
     Private Sub RestrictCharacters(sender As Object, e As KeyPressEventArgs)
 
@@ -56,7 +74,5 @@ Public Class Pattern_a_deviner
 
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
 
-    End Sub
 End Class

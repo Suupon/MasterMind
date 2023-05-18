@@ -27,11 +27,16 @@ Partial Class Pattern_a_deviner
         Me.char_jouable = New System.Windows.Forms.Label()
         Me.btn_cacher = New System.Windows.Forms.Button()
         Me.Panel_textbox = New System.Windows.Forms.Panel()
-        Me.Txt_6 = New System.Windows.Forms.TextBox()
-        Me.Txt_7 = New System.Windows.Forms.TextBox()
-        Me.Txt_8 = New System.Windows.Forms.TextBox()
-        Me.Txt_9 = New System.Windows.Forms.TextBox()
-        Me.Txt_10 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.textbox10 = New System.Windows.Forms.TextBox()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +45,7 @@ Partial Class Pattern_a_deviner
         Me.mastermind.AutoSize = True
         Me.mastermind.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mastermind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.mastermind.Location = New System.Drawing.Point(400, 72)
+        Me.mastermind.Location = New System.Drawing.Point(393, 76)
         Me.mastermind.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.mastermind.Name = "mastermind"
         Me.mastermind.Size = New System.Drawing.Size(96, 17)
@@ -77,77 +82,93 @@ Partial Class Pattern_a_deviner
         Me.btn_cacher.Text = "Cacher"
         Me.btn_cacher.UseVisualStyleBackColor = True
         '
-        'Txt_5
-        '
-        Me.Txt_5.Location = New System.Drawing.Point(302, 31)
-        Me.Txt_5.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_5.Name = "Txt_5"
-        Me.Txt_5.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_5.TabIndex = 13
-        '
-        'Txt_4
-        '
-        Me.Txt_4.Location = New System.Drawing.Point(236, 31)
-        Me.Txt_4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_4.Name = "Txt_4"
-        Me.Txt_4.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_4.TabIndex = 12
-        '
-        'Txt_3
-        '
-        Me.Txt_3.Location = New System.Drawing.Point(170, 31)
-        Me.Txt_3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_3.Name = "Txt_3"
-        Me.Txt_3.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_3.TabIndex = 11
-        '
-        'Txt_2
-        '
-        Me.Txt_2.Location = New System.Drawing.Point(104, 31)
-        Me.Txt_2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_2.Name = "Txt_2"
-        Me.Txt_2.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_2.TabIndex = 10
-        '
-        'Txt_1
-        '
-        Me.Txt_1.Location = New System.Drawing.Point(38, 31)
-        Me.Txt_1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Txt_1.Name = "Txt_1"
-        Me.Txt_1.Size = New System.Drawing.Size(58, 23)
-        Me.Txt_1.TabIndex = 9
-        '
         'Panel_textbox
         '
-        Me.Panel_textbox.Location = New System.Drawing.Point(34, 179)
+        Me.Panel_textbox.Controls.Add(Me.TextBox1)
+        Me.Panel_textbox.Controls.Add(Me.TextBox2)
+        Me.Panel_textbox.Controls.Add(Me.TextBox3)
+        Me.Panel_textbox.Controls.Add(Me.TextBox4)
+        Me.Panel_textbox.Controls.Add(Me.TextBox5)
+        Me.Panel_textbox.Controls.Add(Me.TextBox6)
+        Me.Panel_textbox.Controls.Add(Me.TextBox7)
+        Me.Panel_textbox.Controls.Add(Me.TextBox8)
+        Me.Panel_textbox.Controls.Add(Me.TextBox9)
+        Me.Panel_textbox.Controls.Add(Me.textbox10)
+        Me.Panel_textbox.Location = New System.Drawing.Point(211, 168)
         Me.Panel_textbox.Name = "Panel_textbox"
-        Me.Panel_textbox.Size = New System.Drawing.Size(508, 37)
+        Me.Panel_textbox.Size = New System.Drawing.Size(487, 37)
         Me.Panel_textbox.TabIndex = 17
         Me.Panel_textbox.TabStop = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(24, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox1.TabIndex = 27
+        '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(116, 4)
+        Me.TextBox2.Location = New System.Drawing.Point(70, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox2.TabIndex = 1
-        Me.TextBox2.Visible = False
+        Me.TextBox2.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox2.TabIndex = 26
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(116, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox3.TabIndex = 25
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(162, 4)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox4.TabIndex = 24
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(260, 4)
+        Me.TextBox5.Location = New System.Drawing.Point(208, 4)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox5.TabIndex = 4
-        Me.TextBox5.Visible = False
+        Me.TextBox5.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox5.TabIndex = 23
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(254, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox6.TabIndex = 22
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(300, 4)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox7.TabIndex = 21
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(346, 4)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox8.TabIndex = 20
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(452, 4)
+        Me.TextBox9.Location = New System.Drawing.Point(392, 4)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(42, 23)
-        Me.TextBox9.TabIndex = 8
-        Me.TextBox9.Visible = False
+        Me.TextBox9.Size = New System.Drawing.Size(40, 23)
+        Me.TextBox9.TabIndex = 19
+        '
+        'textbox10
+        '
+        Me.textbox10.Location = New System.Drawing.Point(438, 4)
+        Me.textbox10.Name = "textbox10"
+        Me.textbox10.Size = New System.Drawing.Size(40, 23)
+        Me.textbox10.TabIndex = 18
         '
         'Pattern_a_deviner
         '
@@ -174,13 +195,16 @@ Partial Class Pattern_a_deviner
     Friend WithEvents char_jouable As Label
     Friend WithEvents btn_cacher As Button
     Friend WithEvents Panel_textbox As Panel
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents textbox10 As TextBox
+
+
 End Class
