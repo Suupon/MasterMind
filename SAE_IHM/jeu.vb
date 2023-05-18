@@ -29,13 +29,7 @@
             Dim tab() As String = {Txt_1.Text, Txt_2.Text, Txt_3.Text, Txt_4.Text, Txt_5.Text}
 
 
-            For i As Integer = 0 To mod_enregistrement.tab.Length - 1
-                If tab(i) = mod_enregistrement.tab(i) Then
 
-
-
-                End If
-            Next
 
 
         End If

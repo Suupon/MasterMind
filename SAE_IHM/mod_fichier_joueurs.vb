@@ -44,4 +44,22 @@ Module mod_fichier_joueurs
         ' retourne le nom du joueur 
         Return line.Split(";")(0)
     End Function
+
+    Public Sub sauvegarde_joueurs(j1 As Joueur, j2 As Joueur)
+        Dim nom_joueur As String
+        For i As Integer = 0 To all_joueurs_str.Length
+            nom_joueur = all_joueurs_str(i).Split(";")(0)
+            If (nom_joueur.Equals(j1.get_nom)) Then
+                all_joueurs_str(i) = j1.ToString
+            End If
+            If (nom_joueur.Equals(j2.get_nom)) Then
+                all_joueurs_str(i) = j2.ToString
+            End If
+        Next
+
+        If (File.Exists(file_path_joueurs)) Then
+
+            File.WriteAllLines(file_path_joueurs, all_joueurs_str, Encoding.UTF8)
+        End If
+    End Sub
 End Module

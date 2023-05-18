@@ -28,6 +28,7 @@ Partial Class Accueil
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_param = New System.Windows.Forms.Button()
+        Me.btn_stat = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cb_box_p1
@@ -83,11 +84,21 @@ Partial Class Accueil
         Me.btn_param.Text = "Paramètres"
         Me.btn_param.UseVisualStyleBackColor = True
         '
+        'btn_stat
+        '
+        Me.btn_stat.Location = New System.Drawing.Point(112, 356)
+        Me.btn_stat.Name = "btn_stat"
+        Me.btn_stat.Size = New System.Drawing.Size(75, 23)
+        Me.btn_stat.TabIndex = 6
+        Me.btn_stat.Text = "Statistique"
+        Me.btn_stat.UseVisualStyleBackColor = True
+        '
         'Accueil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btn_stat)
         Me.Controls.Add(Me.btn_param)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -96,7 +107,6 @@ Partial Class Accueil
         Me.Controls.Add(Me.cb_box_p1)
         Me.ForeColor = System.Drawing.Color.Black
         Me.Name = "Accueil"
-        Me.Text = "Accueil"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -108,4 +118,5 @@ Partial Class Accueil
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_param As Button
+    Friend WithEvents btn_stat As Button
 End Class
