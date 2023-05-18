@@ -3,7 +3,7 @@
 Module mod_param
     Private file_path_param = "..\..\..\param.txt"
     'Public param_str = File.ReadAllLines(file_path_param)
-    Public Const MAX_NB_CASES = 9
+    Public Const MAX_NB_CASES = 10
     Public Const MIN_NB_CASES = 3
     Private nb_case As Integer
     Private caractere_possibles As String
