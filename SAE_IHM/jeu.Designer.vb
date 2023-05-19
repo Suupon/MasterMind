@@ -136,7 +136,7 @@ Partial Class jeu
         Me.Present_et_Bien_Place.AutoSize = True
         Me.Present_et_Bien_Place.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Present_et_Bien_Place.ForeColor = System.Drawing.Color.Lime
-        Me.Present_et_Bien_Place.Location = New System.Drawing.Point(598, 313)
+        Me.Present_et_Bien_Place.Location = New System.Drawing.Point(599, 315)
         Me.Present_et_Bien_Place.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Present_et_Bien_Place.Name = "Present_et_Bien_Place"
         Me.Present_et_Bien_Place.Size = New System.Drawing.Size(125, 15)
@@ -288,7 +288,7 @@ Partial Class jeu
         '
         'RichTextBox_deviner
         '
-        Me.RichTextBox_deviner.Location = New System.Drawing.Point(281, 274)
+        Me.RichTextBox_deviner.Location = New System.Drawing.Point(281, 285)
         Me.RichTextBox_deviner.Name = "RichTextBox_deviner"
         Me.RichTextBox_deviner.ReadOnly = True
         Me.RichTextBox_deviner.Size = New System.Drawing.Size(190, 160)
