@@ -90,7 +90,7 @@ Partial Class jeu
         Me.mastermind.AutoSize = True
         Me.mastermind.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mastermind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.mastermind.Location = New System.Drawing.Point(309, 122)
+        Me.mastermind.Location = New System.Drawing.Point(314, 114)
         Me.mastermind.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.mastermind.Name = "mastermind"
         Me.mastermind.Size = New System.Drawing.Size(96, 17)
