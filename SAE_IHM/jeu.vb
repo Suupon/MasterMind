@@ -79,7 +79,7 @@ Public Class jeu
 
             If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
                 Panel_textbox.Controls(i).BackColor = Color.Green
-                RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
+
                 RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
                 cpt_green -= 1
 
@@ -95,8 +95,7 @@ Public Class jeu
                 If mod_enregistrement.tab_deviner1(j) = mod_enregistrement.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
 
                     Panel_textbox.Controls(j).BackColor = Color.Blue
-                    RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
-                    RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
+
                 End If
 
 
@@ -108,13 +107,20 @@ Public Class jeu
 
             If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
                 Panel_textbox.Controls(i).BackColor = Color.Red
-                RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
-                RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
+
             End If
         Next
 
-        For Each tb As TextBox In Panel_textbox.Controls.OfType(Of TextBox)
+        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
+
+
+            RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
+            RichTextBox_deviner.Select(RichTextBox_deviner.TextLength - 1, 1)
+            RichTextBox_deviner.SelectionColor = Panel_textbox.Controls(i).BackColor
+
         Next
+        RichTextBox_deviner.AppendText(vbCrLf)
+
 
         If compteur_essai > 0 Then
             compteur_essai -= 1

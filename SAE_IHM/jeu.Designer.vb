@@ -22,306 +22,329 @@ Partial Class jeu
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.char_guess = New System.Windows.Forms.Label()
-        Me.char_jouable = New System.Windows.Forms.Label()
-        Me.btn_deviner = New System.Windows.Forms.Button()
-        Me.mastermind = New System.Windows.Forms.Label()
-        Me.Code_Couleur = New System.Windows.Forms.Label()
-        Me.Absent = New System.Windows.Forms.Label()
-        Me.Present = New System.Windows.Forms.Label()
-        Me.Present_et_Bien_Place = New System.Windows.Forms.Label()
-        Me.Btn_bye = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel_textbox = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.textbox10 = New System.Windows.Forms.TextBox()
-        Me.Compteur = New System.Windows.Forms.Label()
-        Me.Label_e_restant = New System.Windows.Forms.Label()
-        Me.Label_temps = New System.Windows.Forms.Label()
-        Me.Label_timer = New System.Windows.Forms.Label()
-        Me.RichTextBox_deviner = New System.Windows.Forms.RichTextBox()
-        Me.Panel_textbox.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'char_guess
-        '
-        Me.char_guess.AutoSize = True
-        Me.char_guess.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.char_guess.Location = New System.Drawing.Point(598, 387)
-        Me.char_guess.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.char_guess.Name = "char_guess"
-        Me.char_guess.Size = New System.Drawing.Size(61, 15)
-        Me.char_guess.TabIndex = 25
-        Me.char_guess.Text = "# $ £ % @"
-        '
-        'char_jouable
-        '
-        Me.char_jouable.AutoSize = True
-        Me.char_jouable.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.char_jouable.Location = New System.Drawing.Point(598, 361)
-        Me.char_jouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.char_jouable.Name = "char_jouable"
-        Me.char_jouable.Size = New System.Drawing.Size(117, 15)
-        Me.char_jouable.TabIndex = 24
-        Me.char_jouable.Text = "Caractères Jouable :"
-        '
-        'btn_deviner
-        '
-        Me.btn_deviner.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.btn_deviner.Location = New System.Drawing.Point(598, 182)
-        Me.btn_deviner.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.btn_deviner.Name = "btn_deviner"
-        Me.btn_deviner.Size = New System.Drawing.Size(85, 27)
-        Me.btn_deviner.TabIndex = 10
-        Me.btn_deviner.Text = "Deviner"
-        Me.btn_deviner.UseVisualStyleBackColor = True
-        '
-        'mastermind
-        '
-        Me.mastermind.AutoSize = True
-        Me.mastermind.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.mastermind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.mastermind.Location = New System.Drawing.Point(309, 122)
-        Me.mastermind.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.mastermind.Name = "mastermind"
-        Me.mastermind.Size = New System.Drawing.Size(96, 17)
-        Me.mastermind.TabIndex = 17
-        Me.mastermind.Text = "Master Mind"
-        '
-        'Code_Couleur
-        '
-        Me.Code_Couleur.AutoSize = True
-        Me.Code_Couleur.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Code_Couleur.Location = New System.Drawing.Point(598, 240)
-        Me.Code_Couleur.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Code_Couleur.Name = "Code_Couleur"
-        Me.Code_Couleur.Size = New System.Drawing.Size(81, 15)
-        Me.Code_Couleur.TabIndex = 27
-        Me.Code_Couleur.Text = "Code Couleur"
-        '
-        'Absent
-        '
-        Me.Absent.AutoSize = True
-        Me.Absent.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Absent.Location = New System.Drawing.Point(598, 263)
-        Me.Absent.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Absent.Name = "Absent"
-        Me.Absent.Size = New System.Drawing.Size(44, 15)
-        Me.Absent.TabIndex = 28
-        Me.Absent.Text = "Absent"
-        '
-        'Present
-        '
-        Me.Present.AutoSize = True
-        Me.Present.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Present.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Present.Location = New System.Drawing.Point(598, 288)
-        Me.Present.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Present.Name = "Present"
-        Me.Present.Size = New System.Drawing.Size(46, 15)
-        Me.Present.TabIndex = 29
-        Me.Present.Text = "Présent"
-        '
-        'Present_et_Bien_Place
-        '
-        Me.Present_et_Bien_Place.AutoSize = True
-        Me.Present_et_Bien_Place.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Present_et_Bien_Place.ForeColor = System.Drawing.Color.Lime
-        Me.Present_et_Bien_Place.Location = New System.Drawing.Point(599, 315)
-        Me.Present_et_Bien_Place.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Present_et_Bien_Place.Name = "Present_et_Bien_Place"
-        Me.Present_et_Bien_Place.Size = New System.Drawing.Size(125, 15)
-        Me.Present_et_Bien_Place.TabIndex = 30
-        Me.Present_et_Bien_Place.Text = "Présent et Bien Placé"
-        '
-        'Btn_bye
-        '
-        Me.Btn_bye.Location = New System.Drawing.Point(649, 666)
-        Me.Btn_bye.Name = "Btn_bye"
-        Me.Btn_bye.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_bye.TabIndex = 31
-        Me.Btn_bye.Text = "Bye"
-        Me.Btn_bye.UseVisualStyleBackColor = True
-        Me.Btn_bye.Visible = False
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
-        '
-        'Panel_textbox
-        '
-        Me.Panel_textbox.Controls.Add(Me.TextBox1)
-        Me.Panel_textbox.Controls.Add(Me.TextBox2)
-        Me.Panel_textbox.Controls.Add(Me.TextBox3)
-        Me.Panel_textbox.Controls.Add(Me.TextBox4)
-        Me.Panel_textbox.Controls.Add(Me.TextBox5)
-        Me.Panel_textbox.Controls.Add(Me.TextBox6)
-        Me.Panel_textbox.Controls.Add(Me.TextBox7)
-        Me.Panel_textbox.Controls.Add(Me.TextBox8)
-        Me.Panel_textbox.Controls.Add(Me.TextBox9)
-        Me.Panel_textbox.Controls.Add(Me.textbox10)
-        Me.Panel_textbox.Location = New System.Drawing.Point(85, 182)
-        Me.Panel_textbox.Name = "Panel_textbox"
-        Me.Panel_textbox.Size = New System.Drawing.Size(487, 37)
-        Me.Panel_textbox.TabIndex = 34
-        Me.Panel_textbox.TabStop = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(24, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox1.TabIndex = 0
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(70, 4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox2.TabIndex = 1
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(116, 4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox3.TabIndex = 2
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(162, 4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox4.TabIndex = 3
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(208, 4)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox5.TabIndex = 4
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(254, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox6.TabIndex = 5
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(300, 4)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox7.TabIndex = 6
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(346, 4)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox8.TabIndex = 7
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(392, 4)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox9.TabIndex = 8
-        '
-        'textbox10
-        '
-        Me.textbox10.Location = New System.Drawing.Point(438, 4)
-        Me.textbox10.Name = "textbox10"
-        Me.textbox10.Size = New System.Drawing.Size(40, 23)
-        Me.textbox10.TabIndex = 9
-        '
-        'Compteur
-        '
-        Me.Compteur.AutoSize = True
-        Me.Compteur.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Compteur.Location = New System.Drawing.Point(179, 9)
-        Me.Compteur.Name = "Compteur"
-        Me.Compteur.Size = New System.Drawing.Size(71, 19)
-        Me.Compteur.TabIndex = 36
-        Me.Compteur.Text = "Compteur"
-        '
-        'Label_e_restant
-        '
-        Me.Label_e_restant.AutoSize = True
-        Me.Label_e_restant.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_e_restant.Location = New System.Drawing.Point(12, 9)
-        Me.Label_e_restant.Name = "Label_e_restant"
-        Me.Label_e_restant.Size = New System.Drawing.Size(161, 19)
-        Me.Label_e_restant.TabIndex = 37
-        Me.Label_e_restant.Text = "Nombre d'essai restant : "
-        '
-        'Label_temps
-        '
-        Me.Label_temps.AutoSize = True
-        Me.Label_temps.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_temps.Location = New System.Drawing.Point(12, 39)
-        Me.Label_temps.Name = "Label_temps"
-        Me.Label_temps.Size = New System.Drawing.Size(106, 19)
-        Me.Label_temps.TabIndex = 38
-        Me.Label_temps.Text = "Temps restant : "
-        '
-        'Label_timer
-        '
-        Me.Label_timer.AutoSize = True
-        Me.Label_timer.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_timer.Location = New System.Drawing.Point(124, 39)
-        Me.Label_timer.Name = "Label_timer"
-        Me.Label_timer.Size = New System.Drawing.Size(43, 19)
-        Me.Label_timer.TabIndex = 39
-        Me.Label_timer.Text = "Timer"
-        '
-        'RichTextBox_deviner
-        '
-        Me.RichTextBox_deviner.Location = New System.Drawing.Point(281, 285)
-        Me.RichTextBox_deviner.Name = "RichTextBox_deviner"
-        Me.RichTextBox_deviner.ReadOnly = True
-        Me.RichTextBox_deviner.Size = New System.Drawing.Size(190, 160)
-        Me.RichTextBox_deviner.TabIndex = 40
-        Me.RichTextBox_deviner.Text = ""
-        '
-        'jeu
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(790, 785)
-        Me.Controls.Add(Me.RichTextBox_deviner)
-        Me.Controls.Add(Me.Label_timer)
-        Me.Controls.Add(Me.Label_temps)
-        Me.Controls.Add(Me.Label_e_restant)
-        Me.Controls.Add(Me.Compteur)
-        Me.Controls.Add(Me.Panel_textbox)
-        Me.Controls.Add(Me.Btn_bye)
-        Me.Controls.Add(Me.Present_et_Bien_Place)
-        Me.Controls.Add(Me.Present)
-        Me.Controls.Add(Me.Absent)
-        Me.Controls.Add(Me.Code_Couleur)
-        Me.Controls.Add(Me.char_guess)
-        Me.Controls.Add(Me.char_jouable)
-        Me.Controls.Add(Me.btn_deviner)
-        Me.Controls.Add(Me.mastermind)
-        Me.Name = "jeu"
-        Me.Text = "jeu"
-        Me.Panel_textbox.ResumeLayout(False)
-        Me.Panel_textbox.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        components = New ComponentModel.Container()
+        char_guess = New Label()
+        char_jouable = New Label()
+        btn_deviner = New Button()
+        mastermind = New Label()
+        Code_Couleur = New Label()
+        Absent = New Label()
+        Present = New Label()
+        Present_et_Bien_Place = New Label()
+        Btn_bye = New Button()
+        Timer1 = New Timer(components)
+        Panel_textbox = New Panel()
+        TextBox1 = New TextBox()
+        TextBox2 = New TextBox()
+        TextBox3 = New TextBox()
+        TextBox4 = New TextBox()
+        TextBox5 = New TextBox()
+        TextBox6 = New TextBox()
+        TextBox7 = New TextBox()
+        TextBox8 = New TextBox()
+        TextBox9 = New TextBox()
+        textbox10 = New TextBox()
+        Compteur = New Label()
+        Label_e_restant = New Label()
+        Label_temps = New Label()
+        Label_timer = New Label()
+        RichTextBox_deviner = New RichTextBox()
+        RichTextBox1 = New RichTextBox()
+        Panel_textbox.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' char_guess
+        ' 
+        char_guess.AutoSize = True
+        char_guess.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        char_guess.Location = New Point(683, 516)
+        char_guess.Margin = New Padding(5, 0, 5, 0)
+        char_guess.Name = "char_guess"
+        char_guess.Size = New Size(79, 20)
+        char_guess.TabIndex = 25
+        char_guess.Text = "# $ £ % @"
+        ' 
+        ' char_jouable
+        ' 
+        char_jouable.AutoSize = True
+        char_jouable.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        char_jouable.Location = New Point(683, 481)
+        char_jouable.Margin = New Padding(5, 0, 5, 0)
+        char_jouable.Name = "char_jouable"
+        char_jouable.Size = New Size(148, 20)
+        char_jouable.TabIndex = 24
+        char_jouable.Text = "Caractères Jouable :"
+        ' 
+        ' btn_deviner
+        ' 
+        btn_deviner.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_deviner.Location = New Point(683, 243)
+        btn_deviner.Margin = New Padding(5, 4, 5, 4)
+        btn_deviner.Name = "btn_deviner"
+        btn_deviner.Size = New Size(97, 36)
+        btn_deviner.TabIndex = 10
+        btn_deviner.Text = "Deviner"
+        btn_deviner.UseVisualStyleBackColor = True
+        ' 
+        ' mastermind
+        ' 
+        mastermind.AutoSize = True
+        mastermind.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        mastermind.ForeColor = SystemColors.ActiveCaptionText
+        mastermind.Location = New Point(353, 163)
+        mastermind.Margin = New Padding(6, 0, 6, 0)
+        mastermind.Name = "mastermind"
+        mastermind.Size = New Size(113, 20)
+        mastermind.TabIndex = 17
+        mastermind.Text = "Master Mind"
+        ' 
+        ' Code_Couleur
+        ' 
+        Code_Couleur.AutoSize = True
+        Code_Couleur.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Code_Couleur.Location = New Point(683, 320)
+        Code_Couleur.Margin = New Padding(5, 0, 5, 0)
+        Code_Couleur.Name = "Code_Couleur"
+        Code_Couleur.Size = New Size(102, 20)
+        Code_Couleur.TabIndex = 27
+        Code_Couleur.Text = "Code Couleur"
+        ' 
+        ' Absent
+        ' 
+        Absent.AutoSize = True
+        Absent.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Absent.Location = New Point(683, 351)
+        Absent.Margin = New Padding(5, 0, 5, 0)
+        Absent.Name = "Absent"
+        Absent.Size = New Size(55, 20)
+        Absent.TabIndex = 28
+        Absent.Text = "Absent"
+        ' 
+        ' Present
+        ' 
+        Present.AutoSize = True
+        Present.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Present.ForeColor = Color.FromArgb(CByte(128), CByte(255), CByte(255))
+        Present.Location = New Point(683, 384)
+        Present.Margin = New Padding(5, 0, 5, 0)
+        Present.Name = "Present"
+        Present.Size = New Size(57, 20)
+        Present.TabIndex = 29
+        Present.Text = "Présent"
+        ' 
+        ' Present_et_Bien_Place
+        ' 
+        Present_et_Bien_Place.AutoSize = True
+        Present_et_Bien_Place.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Present_et_Bien_Place.ForeColor = Color.Lime
+        Present_et_Bien_Place.Location = New Point(685, 420)
+        Present_et_Bien_Place.Margin = New Padding(5, 0, 5, 0)
+        Present_et_Bien_Place.Name = "Present_et_Bien_Place"
+        Present_et_Bien_Place.Size = New Size(155, 20)
+        Present_et_Bien_Place.TabIndex = 30
+        Present_et_Bien_Place.Text = "Présent et Bien Placé"
+        ' 
+        ' Btn_bye
+        ' 
+        Btn_bye.Location = New Point(742, 888)
+        Btn_bye.Margin = New Padding(3, 4, 3, 4)
+        Btn_bye.Name = "Btn_bye"
+        Btn_bye.Size = New Size(86, 31)
+        Btn_bye.TabIndex = 31
+        Btn_bye.Text = "Bye"
+        Btn_bye.UseVisualStyleBackColor = True
+        Btn_bye.Visible = False
+        ' 
+        ' Timer1
+        ' 
+        Timer1.Enabled = True
+        Timer1.Interval = 1000
+        ' 
+        ' Panel_textbox
+        ' 
+        Panel_textbox.Controls.Add(TextBox1)
+        Panel_textbox.Controls.Add(TextBox2)
+        Panel_textbox.Controls.Add(TextBox3)
+        Panel_textbox.Controls.Add(TextBox4)
+        Panel_textbox.Controls.Add(TextBox5)
+        Panel_textbox.Controls.Add(TextBox6)
+        Panel_textbox.Controls.Add(TextBox7)
+        Panel_textbox.Controls.Add(TextBox8)
+        Panel_textbox.Controls.Add(TextBox9)
+        Panel_textbox.Controls.Add(textbox10)
+        Panel_textbox.Location = New Point(97, 243)
+        Panel_textbox.Margin = New Padding(3, 4, 3, 4)
+        Panel_textbox.Name = "Panel_textbox"
+        Panel_textbox.Size = New Size(557, 49)
+        Panel_textbox.TabIndex = 34
+        Panel_textbox.TabStop = True
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(27, 5)
+        TextBox1.Margin = New Padding(3, 4, 3, 4)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(45, 27)
+        TextBox1.TabIndex = 0
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(80, 5)
+        TextBox2.Margin = New Padding(3, 4, 3, 4)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(45, 27)
+        TextBox2.TabIndex = 1
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(133, 5)
+        TextBox3.Margin = New Padding(3, 4, 3, 4)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(45, 27)
+        TextBox3.TabIndex = 2
+        ' 
+        ' TextBox4
+        ' 
+        TextBox4.Location = New Point(185, 5)
+        TextBox4.Margin = New Padding(3, 4, 3, 4)
+        TextBox4.Name = "TextBox4"
+        TextBox4.Size = New Size(45, 27)
+        TextBox4.TabIndex = 3
+        ' 
+        ' TextBox5
+        ' 
+        TextBox5.Location = New Point(238, 5)
+        TextBox5.Margin = New Padding(3, 4, 3, 4)
+        TextBox5.Name = "TextBox5"
+        TextBox5.Size = New Size(45, 27)
+        TextBox5.TabIndex = 4
+        ' 
+        ' TextBox6
+        ' 
+        TextBox6.Location = New Point(290, 5)
+        TextBox6.Margin = New Padding(3, 4, 3, 4)
+        TextBox6.Name = "TextBox6"
+        TextBox6.Size = New Size(45, 27)
+        TextBox6.TabIndex = 5
+        ' 
+        ' TextBox7
+        ' 
+        TextBox7.Location = New Point(343, 5)
+        TextBox7.Margin = New Padding(3, 4, 3, 4)
+        TextBox7.Name = "TextBox7"
+        TextBox7.Size = New Size(45, 27)
+        TextBox7.TabIndex = 6
+        ' 
+        ' TextBox8
+        ' 
+        TextBox8.Location = New Point(395, 5)
+        TextBox8.Margin = New Padding(3, 4, 3, 4)
+        TextBox8.Name = "TextBox8"
+        TextBox8.Size = New Size(45, 27)
+        TextBox8.TabIndex = 7
+        ' 
+        ' TextBox9
+        ' 
+        TextBox9.Location = New Point(448, 5)
+        TextBox9.Margin = New Padding(3, 4, 3, 4)
+        TextBox9.Name = "TextBox9"
+        TextBox9.Size = New Size(45, 27)
+        TextBox9.TabIndex = 8
+        ' 
+        ' textbox10
+        ' 
+        textbox10.Location = New Point(501, 5)
+        textbox10.Margin = New Padding(3, 4, 3, 4)
+        textbox10.Name = "textbox10"
+        textbox10.Size = New Size(45, 27)
+        textbox10.TabIndex = 9
+        ' 
+        ' Compteur
+        ' 
+        Compteur.AutoSize = True
+        Compteur.Font = New Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point)
+        Compteur.Location = New Point(205, 12)
+        Compteur.Name = "Compteur"
+        Compteur.Size = New Size(87, 23)
+        Compteur.TabIndex = 36
+        Compteur.Text = "Compteur"
+        ' 
+        ' Label_e_restant
+        ' 
+        Label_e_restant.AutoSize = True
+        Label_e_restant.Font = New Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point)
+        Label_e_restant.Location = New Point(14, 12)
+        Label_e_restant.Name = "Label_e_restant"
+        Label_e_restant.Size = New Size(200, 23)
+        Label_e_restant.TabIndex = 37
+        Label_e_restant.Text = "Nombre d'essai restant : "
+        ' 
+        ' Label_temps
+        ' 
+        Label_temps.AutoSize = True
+        Label_temps.Font = New Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point)
+        Label_temps.Location = New Point(14, 52)
+        Label_temps.Name = "Label_temps"
+        Label_temps.Size = New Size(130, 23)
+        Label_temps.TabIndex = 38
+        Label_temps.Text = "Temps restant : "
+        ' 
+        ' Label_timer
+        ' 
+        Label_timer.AutoSize = True
+        Label_timer.Font = New Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point)
+        Label_timer.Location = New Point(142, 52)
+        Label_timer.Name = "Label_timer"
+        Label_timer.Size = New Size(53, 23)
+        Label_timer.TabIndex = 39
+        Label_timer.Text = "Timer"
+        ' 
+        ' RichTextBox_deviner
+        ' 
+        RichTextBox_deviner.Location = New Point(321, 380)
+        RichTextBox_deviner.Margin = New Padding(3, 4, 3, 4)
+        RichTextBox_deviner.Name = "RichTextBox_deviner"
+        RichTextBox_deviner.ReadOnly = True
+        RichTextBox_deviner.Size = New Size(217, 212)
+        RichTextBox_deviner.TabIndex = 40
+        RichTextBox_deviner.Text = ""
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Location = New Point(97, 384)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(125, 120)
+        RichTextBox1.TabIndex = 41
+        RichTextBox1.Text = ""
+        ' 
+        ' jeu
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(903, 1047)
+        Controls.Add(RichTextBox1)
+        Controls.Add(RichTextBox_deviner)
+        Controls.Add(Label_timer)
+        Controls.Add(Label_temps)
+        Controls.Add(Label_e_restant)
+        Controls.Add(Compteur)
+        Controls.Add(Panel_textbox)
+        Controls.Add(Btn_bye)
+        Controls.Add(Present_et_Bien_Place)
+        Controls.Add(Present)
+        Controls.Add(Absent)
+        Controls.Add(Code_Couleur)
+        Controls.Add(char_guess)
+        Controls.Add(char_jouable)
+        Controls.Add(btn_deviner)
+        Controls.Add(mastermind)
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "jeu"
+        Text = "jeu"
+        Panel_textbox.ResumeLayout(False)
+        Panel_textbox.PerformLayout()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents char_guess As Label
@@ -350,4 +373,5 @@ Partial Class jeu
     Friend WithEvents Label_temps As Label
     Friend WithEvents Label_timer As Label
     Friend WithEvents RichTextBox_deviner As RichTextBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
