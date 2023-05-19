@@ -65,15 +65,17 @@ Partial Class Pattern_a_deviner
         'char_jouable
         '
         Me.char_jouable.AutoSize = True
+        Me.char_jouable.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.char_jouable.Location = New System.Drawing.Point(705, 231)
         Me.char_jouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.char_jouable.Name = "char_jouable"
-        Me.char_jouable.Size = New System.Drawing.Size(111, 15)
+        Me.char_jouable.Size = New System.Drawing.Size(117, 15)
         Me.char_jouable.TabIndex = 15
         Me.char_jouable.Text = "Caractères Jouable :"
         '
         'btn_cacher
         '
+        Me.btn_cacher.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.btn_cacher.Location = New System.Drawing.Point(705, 168)
         Me.btn_cacher.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btn_cacher.Name = "btn_cacher"
@@ -105,70 +107,70 @@ Partial Class Pattern_a_deviner
         Me.TextBox1.Location = New System.Drawing.Point(24, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox1.TabIndex = 27
+        Me.TextBox1.TabIndex = 0
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(70, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox2.TabIndex = 26
+        Me.TextBox2.TabIndex = 1
         '
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(116, 4)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox3.TabIndex = 25
+        Me.TextBox3.TabIndex = 2
         '
         'TextBox4
         '
         Me.TextBox4.Location = New System.Drawing.Point(162, 4)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox4.TabIndex = 24
+        Me.TextBox4.TabIndex = 3
         '
         'TextBox5
         '
         Me.TextBox5.Location = New System.Drawing.Point(208, 4)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox5.TabIndex = 23
+        Me.TextBox5.TabIndex = 4
         '
         'TextBox6
         '
         Me.TextBox6.Location = New System.Drawing.Point(254, 4)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox6.TabIndex = 22
+        Me.TextBox6.TabIndex = 5
         '
         'TextBox7
         '
         Me.TextBox7.Location = New System.Drawing.Point(300, 4)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox7.TabIndex = 21
+        Me.TextBox7.TabIndex = 6
         '
         'TextBox8
         '
         Me.TextBox8.Location = New System.Drawing.Point(346, 4)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox8.TabIndex = 20
+        Me.TextBox8.TabIndex = 7
         '
         'TextBox9
         '
         Me.TextBox9.Location = New System.Drawing.Point(392, 4)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(40, 23)
-        Me.TextBox9.TabIndex = 19
+        Me.TextBox9.TabIndex = 8
         '
         'textbox10
         '
         Me.textbox10.Location = New System.Drawing.Point(438, 4)
         Me.textbox10.Name = "textbox10"
         Me.textbox10.Size = New System.Drawing.Size(40, 23)
-        Me.textbox10.TabIndex = 18
+        Me.textbox10.TabIndex = 9
         '
         'Pattern_a_deviner
         '
@@ -205,6 +207,5 @@ Partial Class Pattern_a_deviner
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents textbox10 As TextBox
-
 
 End Class

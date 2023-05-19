@@ -4,6 +4,7 @@ Public Class Pattern_a_deviner
     Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         char_guess.Text = get_caractere_possibles()
+
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             textBox.MaxLength = 1
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
@@ -14,13 +15,6 @@ Public Class Pattern_a_deviner
     Private Sub AfficherTextBox()
 
         Dim nbTextBox As Integer = get_nb_case()
-        If nbTextBox = MAX_NB_CASES Then
-            For Each control As Control In Panel_textbox.Controls
-                If TypeOf control Is TextBox Then
-                    control.Visible = True
-                End If
-            Next
-        End If
 
         For i As Integer = 0 To Panel_textbox.Controls.Count - 1
 
@@ -54,11 +48,7 @@ Public Class Pattern_a_deviner
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
-        For i As Integer = 0 To Panel_textbox.Controls.Count - 1
-            If Panel_textbox.Controls(i).Visible = True Then
-                mod_enregistrement.tab(i) = Panel_textbox.Controls(i).Text
-            End If
-        Next
+        ReDim tab_pattern1(get_nb_case() - 1)
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
@@ -66,8 +56,16 @@ Public Class Pattern_a_deviner
                 Return
             End If
 
-        Next
 
+        Next
+        ' Parcourez les TextBox visibles et stockez les données dans le tableau
+        Dim index As Integer = 0
+        For Each control As Control In Panel_textbox.Controls
+            If TypeOf control Is TextBox AndAlso control.Visible Then
+                tab_pattern1(index) = DirectCast(control, TextBox).Text
+                index += 1
+            End If
+        Next
 
         jeu.Show()
         Me.Close()
