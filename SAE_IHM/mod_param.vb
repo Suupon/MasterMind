@@ -16,7 +16,7 @@ Module mod_param
         nb_case = CInt(param_str(0).Split("=")(1))
         caractere_possibles = param_str(1).Split("=")(1)
         use_time = CBool(param_str(2).Split("=")(1))
-        timer = CInt(param_str(3).Split("=")(1))
+        timer = 90000 'CInt(param_str(3).Split("=")(1))'
         nb_essais = CInt(param_str(4).Split("=")(1))
     End Sub
     Public Sub print_param()

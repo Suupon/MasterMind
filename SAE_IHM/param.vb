@@ -67,6 +67,7 @@
         If (ck_use_time.Checked) Then
             mod_param.set_use_time(True)
             mod_param.set_timer(CInt(txt_box_timer.Text))
+
         Else
             mod_param.set_use_time(False)
             mod_param.set_timer(-1)

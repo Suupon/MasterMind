@@ -87,18 +87,29 @@ Public Class jeu
         Next
 
 
-        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
+        For i As Integer = mod_enregistrement.tab_pattern1.Length - 1 To 0 Step -1
+
             For j As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
-                If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(j) AndAlso Panel_textbox.Controls(i).BackColor <> Color.Green Then
-                    Panel_textbox.Controls(i).BackColor = Color.Blue
-                ElseIf Panel_textbox.Controls(i).BackColor <> Color.Green AndAlso Panel_textbox.Controls(i).BackColor <> Color.Blue Then
-                    Panel_textbox.Controls(i).BackColor = Color.Red
+
+                If mod_enregistrement.tab_deviner1(j) = mod_enregistrement.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
+
+                    Panel_textbox.Controls(j).BackColor = Color.Blue
 
                 End If
+
 
             Next
 
         Next
+
+        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
+
+            If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Red Then
+                Panel_textbox.Controls(i).BackColor = Color.Red
+            End If
+        Next
+
+
 
         ' RichTextBox_deviner.AppendText(Environment.NewLine)
 
