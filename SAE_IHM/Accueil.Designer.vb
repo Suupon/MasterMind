@@ -77,7 +77,7 @@ Partial Class Accueil
         '
         'btn_param
         '
-        Me.btn_param.Location = New System.Drawing.Point(567, 343)
+        Me.btn_param.Location = New System.Drawing.Point(602, 326)
         Me.btn_param.Name = "btn_param"
         Me.btn_param.Size = New System.Drawing.Size(75, 23)
         Me.btn_param.TabIndex = 5
@@ -86,7 +86,7 @@ Partial Class Accueil
         '
         'btn_stat
         '
-        Me.btn_stat.Location = New System.Drawing.Point(112, 356)
+        Me.btn_stat.Location = New System.Drawing.Point(112, 326)
         Me.btn_stat.Name = "btn_stat"
         Me.btn_stat.Size = New System.Drawing.Size(75, 23)
         Me.btn_stat.TabIndex = 6

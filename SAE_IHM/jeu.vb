@@ -10,6 +10,10 @@ Public Class jeu
             Label_temps.Visible = False
         End If
 
+        Present_et_Bien_Place.ForeColor = mod_param.get_color_bon()
+        Present.ForeColor = mod_param.get_color_mal_place()
+        Absent.ForeColor = mod_param.get_color_abs()
+
         Timer1.Start()
         Label_timer.Text = mod_param.get_timer()
         Compteur.Text = mod_param.get_nb_essais()
@@ -78,7 +82,7 @@ Public Class jeu
         For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
             If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
-                Panel_textbox.Controls(i).BackColor = Color.Green
+                Panel_textbox.Controls(i).BackColor = get_color_bon()
 
                 RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
                 cpt_green -= 1
@@ -94,19 +98,17 @@ Public Class jeu
 
                 If mod_enregistrement.tab_deviner1(j) = mod_enregistrement.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
 
-                    Panel_textbox.Controls(j).BackColor = Color.Blue
+                    Panel_textbox.Controls(j).BackColor = get_color_mal_place()
 
                 End If
 
-
             Next
-
         Next
 
         For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
             If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
-                Panel_textbox.Controls(i).BackColor = Color.Red
+                Panel_textbox.Controls(i).BackColor = get_color_abs()
 
             End If
         Next
