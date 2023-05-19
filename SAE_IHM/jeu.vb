@@ -105,9 +105,10 @@ Public Class jeu
         For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
             If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
-                Panel_textbox.Controls(i).BackColor = Color.Red
-            End If
+            Panel_textbox.Controls(i).BackColor = Color.Red
+        End If
         Next
+
 
 
         If compteur_essai > 0 Then
