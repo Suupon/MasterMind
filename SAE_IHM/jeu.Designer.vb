@@ -49,7 +49,6 @@ Partial Class jeu
         Label_temps = New Label()
         Label_timer = New Label()
         RichTextBox_deviner = New RichTextBox()
-        RichTextBox1 = New RichTextBox()
         Panel_textbox.SuspendLayout()
         SuspendLayout()
         ' 
@@ -309,20 +308,11 @@ Partial Class jeu
         RichTextBox_deviner.TabIndex = 40
         RichTextBox_deviner.Text = ""
         ' 
-        ' RichTextBox1
-        ' 
-        RichTextBox1.Location = New Point(97, 384)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(125, 120)
-        RichTextBox1.TabIndex = 41
-        RichTextBox1.Text = ""
-        ' 
         ' jeu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(903, 1047)
-        Controls.Add(RichTextBox1)
         Controls.Add(RichTextBox_deviner)
         Controls.Add(Label_timer)
         Controls.Add(Label_temps)
@@ -373,5 +363,4 @@ Partial Class jeu
     Friend WithEvents Label_temps As Label
     Friend WithEvents Label_timer As Label
     Friend WithEvents RichTextBox_deviner As RichTextBox
-    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
