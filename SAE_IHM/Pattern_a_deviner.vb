@@ -36,9 +36,6 @@ Public Class Pattern_a_deviner
         Next
 
     End Sub
-    Private Sub RestrictCharacters(sender As Object, e As KeyPressEventArgs)
-
-        Dim allowedChars As String = mod_param.get_caractere_possibles
 
     Private Sub RestrictCharacters(sender As Object, e As KeyPressEventArgs)
 

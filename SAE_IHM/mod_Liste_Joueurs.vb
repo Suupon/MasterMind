@@ -1,6 +1,8 @@
 ﻿Module mod_Liste_Joueurs
     Private Joueurs As New List(Of Joueur)
-    Private nb_joueurs As Integer = 0
+
+    Public Joueur1 As Joueur
+    Public Joueur2 As Joueur
     Sub add_joueur(j As Joueur)
         Joueurs.Add(j)
     End Sub

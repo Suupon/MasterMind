@@ -25,15 +25,17 @@
     Private Sub AfficherTextBox()
         Dim nbTextBox As Integer = get_nb_case()
 
-        End If
-        Next
+        For i As Integer = 0 To Panel_textbox.Controls.Count - 1
 
+            If TypeOf Panel_textbox.Controls(i) Is TextBox Then
+                Dim textBox As TextBox = Panel_textbox.Controls(i)
 
-        textBox.Visible = True
-        Else
-        textBox.Visible = False
-        End If
-        End If
+                If i < nbTextBox Then
+                    textBox.Visible = True
+                Else
+                    textBox.Visible = False
+                End If
+            End If
         Next
 
     End Sub
