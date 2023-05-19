@@ -1,5 +1,4 @@
 ﻿Imports Microsoft.VisualBasic.Devices
-Imports System.Diagnostics.Eventing.Reader
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
 Public Class jeu
@@ -69,22 +68,16 @@ Public Class jeu
             End If
         Next
 
-
         For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
             If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
                 Panel_textbox.Controls(i).BackColor = Color.Green
-                'RichTextBox_deviner.AppendText(tab_deviner1(i) & " "'
+                RichTextBox_deviner.ForeColor = Color.Green
+                RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
             End If
+            RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
         Next
 
-        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
-
-            If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
-                Panel_textbox.Controls(i).BackColor = Color.Green
-                'RichTextBox_deviner.AppendText(tab_deviner1(i) & " "'
-            End If
-        Next
 
         For i As Integer = mod_enregistrement.tab_pattern1.Length - 1 To 0 Step -1
 
