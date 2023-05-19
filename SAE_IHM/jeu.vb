@@ -72,11 +72,10 @@ Public Class jeu
 
             If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
                 Panel_textbox.Controls(i).BackColor = Color.Green
-                RichTextBox_deviner.AppendText(tab_deviner1(i) & " ")
+                'RichTextBox_deviner.AppendText(tab_deviner1(i) & " ")
             End If
         Next
-        RichTextBox_deviner.AppendText(Environment.NewLine)
-
+        ' RichTextBox_deviner.AppendText(Environment.NewLine)
 
 
 
