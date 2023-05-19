@@ -86,7 +86,6 @@ Public Class jeu
             End If
         Next
 
-
         For i As Integer = mod_enregistrement.tab_pattern1.Length - 1 To 0 Step -1
 
             For j As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
@@ -104,7 +103,7 @@ Public Class jeu
 
         For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
-            If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Red Then
+            If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
                 Panel_textbox.Controls(i).BackColor = Color.Red
             End If
         Next
@@ -112,6 +111,7 @@ Public Class jeu
 
 
         ' RichTextBox_deviner.AppendText(Environment.NewLine)
+
 
 
 
