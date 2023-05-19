@@ -48,34 +48,27 @@ Public Class Pattern_a_deviner
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
-
+        ReDim tab_pattern1(get_nb_case() - 1)
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
                 MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
                 Return
             End If
-           
+
 
         Next
-
-        ReDim tab1(get_nb_case() - 1)
-
         ' Parcourez les TextBox visibles et stockez les données dans le tableau
         Dim index As Integer = 0
         For Each control As Control In Panel_textbox.Controls
             If TypeOf control Is TextBox AndAlso control.Visible Then
-                tab1(index) = DirectCast(control, TextBox).Text
+                tab_pattern1(index) = DirectCast(control, TextBox).Text
                 index += 1
             End If
         Next
 
         jeu.Show()
         Me.Close()
-
-
-
-
 
     End Sub
 

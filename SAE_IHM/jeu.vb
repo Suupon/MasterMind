@@ -1,14 +1,13 @@
-﻿Public Class jeu
+﻿Imports Microsoft.VisualBasic.Devices
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        MsgBox("Temps écoulé")
-
-    End Sub
+Public Class jeu
 
     Private Sub jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-
+        Timer1.Interval = timer_count
+        Label_timer.Text = timer_count
+        Compteur.Text = get_nb_essais()
         char_guess.Text = get_caractere_possibles()
         AfficherTextBox()
 
@@ -16,6 +15,7 @@
             textBox.MaxLength = 1
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
         Next
+
     End Sub
     Private Sub AfficherTextBox()
 
@@ -49,6 +49,9 @@
     End Sub
 
     Private Sub btn_deviner_Click(sender As Object, e As EventArgs) Handles btn_deviner.Click
+        ReDim tab_deviner1(get_nb_case() - 1)
+        Dim compteur_essai As Integer = Compteur.Text
+        Dim index As Integer = 0
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
@@ -58,34 +61,47 @@
 
         Next
 
-        ReDim tab2(get_nb_case() - 1)
-
-
-        Dim index As Integer = 0
         For Each control As Control In Panel_textbox.Controls
             If TypeOf control Is TextBox AndAlso control.Visible Then
-                tab2(index) = DirectCast(control, TextBox).Text
+                tab_deviner1(index) = DirectCast(control, TextBox).Text
                 index += 1
             End If
         Next
 
+        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
-
-        For i As Integer = 0 To mod_enregistrement.tab1.Length - 1
-            For j As Integer = 0 To tab2.Length - 1
-                If mod_enregistrement.tab1(i) = mod_enregistrement.tab2(i) Then
-                    Panel_textbox.Controls(i).ForeColor = Color.Green
-                ElseIf mod_enregistrement.tab1(i) = mod_enregistrement.tab2(j) AndAlso i <> j Then
-                    Panel_textbox.Controls(i).ForeColor = Color.Blue
-                Else
-                    Panel_textbox.Controls(i).ForeColor = Color.Black
-                End If
-
-            Next
+            If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
+                Panel_textbox.Controls(i).BackColor = Color.Green
+                RichTextBox_deviner.AppendText(tab_deviner1(i) & " ")
+            End If
         Next
+        RichTextBox_deviner.AppendText(Environment.NewLine)
 
-        ListBox1.Items.AddRange(tab2)
+
+
+
+        If compteur_essai > 0 Then
+            compteur_essai -= 1
+            Compteur.Text = compteur_essai
+        End If
+
+        If compteur_essai = 0 Then
+            Compteur.Text = 0
+            MessageBox.Show("Vous avez perdu!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+        End If
+
     End Sub
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        timer_count -= 1
+        Label_timer.Text = timer_count
 
+        If Label_timer.Text = 0 Then
+            Label_timer.Visible = False
+            MessageBox.Show("Temps écoulé", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+        End If
+
+    End Sub
 End Class

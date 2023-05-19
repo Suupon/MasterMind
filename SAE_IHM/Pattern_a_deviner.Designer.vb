@@ -65,15 +65,17 @@ Partial Class Pattern_a_deviner
         'char_jouable
         '
         Me.char_jouable.AutoSize = True
+        Me.char_jouable.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.char_jouable.Location = New System.Drawing.Point(705, 231)
         Me.char_jouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.char_jouable.Name = "char_jouable"
-        Me.char_jouable.Size = New System.Drawing.Size(111, 15)
+        Me.char_jouable.Size = New System.Drawing.Size(117, 15)
         Me.char_jouable.TabIndex = 15
         Me.char_jouable.Text = "Caractères Jouable :"
         '
         'btn_cacher
         '
+        Me.btn_cacher.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.btn_cacher.Location = New System.Drawing.Point(705, 168)
         Me.btn_cacher.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btn_cacher.Name = "btn_cacher"
