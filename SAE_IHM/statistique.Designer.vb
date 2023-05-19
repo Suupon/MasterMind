@@ -23,42 +23,55 @@ Partial Class statistique
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView_Joueur = New System.Windows.Forms.DataGridView()
-        Me.lst_box_nom = New System.Windows.Forms.ListBox()
+        Me.cb_box_choix_trie = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView_Joueur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView_Joueur
         '
         Me.DataGridView_Joueur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView_Joueur.Location = New System.Drawing.Point(56, 251)
+        Me.DataGridView_Joueur.Location = New System.Drawing.Point(73, 126)
         Me.DataGridView_Joueur.Name = "DataGridView_Joueur"
+        Me.DataGridView_Joueur.ReadOnly = True
         Me.DataGridView_Joueur.RowTemplate.Height = 25
-        Me.DataGridView_Joueur.Size = New System.Drawing.Size(693, 243)
+        Me.DataGridView_Joueur.Size = New System.Drawing.Size(658, 371)
         Me.DataGridView_Joueur.TabIndex = 0
         '
-        'lst_box_nom
+        'cb_box_choix_trie
         '
-        Me.lst_box_nom.FormattingEnabled = True
-        Me.lst_box_nom.ItemHeight = 15
-        Me.lst_box_nom.Location = New System.Drawing.Point(56, 33)
-        Me.lst_box_nom.Name = "lst_box_nom"
-        Me.lst_box_nom.Size = New System.Drawing.Size(154, 124)
-        Me.lst_box_nom.TabIndex = 1
+        Me.cb_box_choix_trie.FormattingEnabled = True
+        Me.cb_box_choix_trie.Location = New System.Drawing.Point(73, 75)
+        Me.cb_box_choix_trie.Name = "cb_box_choix_trie"
+        Me.cb_box_choix_trie.Size = New System.Drawing.Size(182, 23)
+        Me.cb_box_choix_trie.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(73, 38)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 15)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Trié par : "
         '
         'statistique
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 528)
-        Me.Controls.Add(Me.lst_box_nom)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cb_box_choix_trie)
         Me.Controls.Add(Me.DataGridView_Joueur)
         Me.Name = "statistique"
-        Me.Text = "Form1"
+        Me.Text = "Statistique"
         CType(Me.DataGridView_Joueur, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents DataGridView_Joueur As DataGridView
-    Friend WithEvents lst_box_nom As ListBox
+    Friend WithEvents cb_box_choix_trie As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

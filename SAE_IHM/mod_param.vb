@@ -11,22 +11,24 @@ Module mod_param
     Private timer As Integer
     Private nb_essais As Integer
 
+    Private color_bon As Color
+    Private color_mal_place As Color
+    Private color_abs As Color
+
     Public Sub load_param()
         Dim param_str As String() = File.ReadAllLines(file_path_param)
         nb_case = CInt(param_str(0).Split("=")(1))
         caractere_possibles = param_str(1).Split("=")(1)
         use_time = CBool(param_str(2).Split("=")(1))
-        timer = 90000 'CInt(param_str(3).Split("=")(1))'
+        timer = CInt(param_str(3).Split("=")(1))
         nb_essais = CInt(param_str(4).Split("=")(1))
-    End Sub
-    Public Sub print_param()
-        Console.WriteLine(nb_case)
-        Console.WriteLine(caractere_possibles)
-        Console.WriteLine(use_time)
-        Console.WriteLine(timer)
-        Console.WriteLine(nb_essais)
+
+        color_bon = Color.FromName(param_str(5).Split("=")(1))
+        color_mal_place = Color.FromName(param_str(6).Split("=")(1))
+        color_abs = Color.FromName(param_str(7).Split("=")(1))
 
     End Sub
+
 
     Public Function get_nb_case() As Integer
         Return nb_case
@@ -44,6 +46,15 @@ Module mod_param
         Return nb_essais
     End Function
 
+    Public Function get_color_bon() As Color
+        Return color_bon
+    End Function
+    Public Function get_color_mal_place() As Color
+        Return color_mal_place
+    End Function
+    Public Function get_color_abs() As Color
+        Return color_abs
+    End Function
 
 
     Public Sub set_nb_case(x As Integer)
@@ -62,5 +73,16 @@ Module mod_param
     Public Sub set_nb_essais(x As Integer)
         nb_essais = x
     End Sub
+
+    Public Sub set_color_bon(c As Color)
+        color_bon = c
+    End Sub
+    Public Sub set_color_mal_place(c As Color)
+        color_mal_place = c
+    End Sub
+    Public Sub set_color_abs(c As Color)
+        color_abs = c
+    End Sub
+
 
 End Module

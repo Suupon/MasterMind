@@ -49,10 +49,10 @@ Module mod_fichier_joueurs
         Dim nom_joueur As String
         For i As Integer = 0 To all_joueurs_str.Length
             nom_joueur = all_joueurs_str(i).Split(";")(0)
-            If (nom_joueur.Equals(j1.get_nom)) Then
+            If (nom_joueur.Equals(j1.get_nom_joueur)) Then
                 all_joueurs_str(i) = j1.ToString
             End If
-            If (nom_joueur.Equals(j2.get_nom)) Then
+            If (nom_joueur.Equals(j2.get_nom_joueur)) Then
                 all_joueurs_str(i) = j2.ToString
             End If
         Next

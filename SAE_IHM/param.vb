@@ -5,6 +5,9 @@
         cb_box_nb_cases.Text = mod_param.get_nb_case
         txt_box_car_possibles.Text = mod_param.get_caractere_possibles
         txt_box_nb_essais.Text = mod_param.get_nb_essais
+        btn_couleur_bon.BackColor = mod_param.get_color_bon
+        btn_couleur_mal_place.BackColor = mod_param.get_color_mal_place
+        btn_couleur_abs.BackColor = mod_param.get_color_abs
         If (mod_param.get_use_time) Then
             ck_use_time.Checked = True
             txt_box_timer.Text = mod_param.get_timer
@@ -78,5 +81,14 @@
 
     End Sub
 
-
+    Private Sub btn_couleur_bon_Click(sender As Object, e As EventArgs) Handles btn_couleur_bon.Click, btn_couleur_mal_place.Click, btn_couleur_abs.Click
+        Dim color As DialogResult
+        color = ColorDialog1.ShowDialog()
+        If color = Windows.Forms.DialogResult.OK Then
+            sender.BackColor = ColorDialog1.Color
+            mod_param.set_color_bon(btn_couleur_bon.BackColor)
+            mod_param.set_color_mal_place(btn_couleur_mal_place.BackColor)
+            mod_param.set_color_abs(btn_couleur_abs.BackColor)
+        End If
+    End Sub
 End Class

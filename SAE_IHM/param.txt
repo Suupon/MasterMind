@@ -3,3 +3,6 @@ caratere_possibles=@#$£%
 use_time=true
 timer=90
 nb_essais=15
+color_bon=Green
+color_mal_place=Blue
+color_abs=DarkGray

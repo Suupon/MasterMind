@@ -7,13 +7,13 @@ Public Class Accueil
 
         mod_fichier_joueurs.load_joueurs()
         mod_param.load_param()
-        mod_param.print_param()
 
 
         Dim nom_joueurs_source As New AutoCompleteStringCollection()
         nom_joueurs_source.AddRange(mod_Liste_Joueurs.get_nom_joueurs.ToArray)
         autocompletion_cb_box_joueurs(cb_box_p1, nom_joueurs_source)
         autocompletion_cb_box_joueurs(cb_box_p2, nom_joueurs_source)
+
 
 
 
