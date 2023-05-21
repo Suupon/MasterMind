@@ -5,15 +5,15 @@ Public Class Joueur
     Private score_joueur As Integer
     Private best_time_joueur As Integer 'en sec
     Private nb_partie_first_joueur As Integer
-    Private nb_partie_segond_joueur As Integer
+    Private nb_partie_second_joueur As Integer
     Private cumul_temp_deviner_combi_joueur As Integer ' en sec
 
-    Sub New(nom As String, score As Integer, best_time As Integer, nb_partie_first As Integer, nb_partie_segond As Integer, cumul_temp_deviner_combi As Integer)
+    Sub New(nom As String, score As Integer, best_time As Integer, nb_partie_first As Integer, nb_partie_second As Integer, cumul_temp_deviner_combi As Integer)
         nom_joueur = nom
         score_joueur = score
         best_time_joueur = best_time
         nb_partie_first_joueur = nb_partie_first
-        nb_partie_segond_joueur = nb_partie_segond
+        nb_partie_second_joueur = nb_partie_second
         cumul_temp_deviner_combi_joueur = cumul_temp_deviner_combi
 
     End Sub
@@ -32,8 +32,8 @@ Public Class Joueur
     Public Function get_nb_partie_first_joueur() As Integer
         Return nb_partie_first_joueur
     End Function
-    Public Function get_nb_partie_segond_joueur() As Integer
-        Return nb_partie_segond_joueur
+    Public Function get_nb_partie_second_joueur() As Integer
+        Return nb_partie_second_joueur
     End Function
     Public Function get_cumul_temp_joueur() As Integer
         Return cumul_temp_deviner_combi_joueur

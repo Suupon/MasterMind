@@ -4,6 +4,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 Public Class jeu
 
     Private Sub jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If get_use_time() = False Then
             Timer1.Enabled = False
             Label_timer.Visible = False
