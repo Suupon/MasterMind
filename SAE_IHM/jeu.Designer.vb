@@ -31,7 +31,7 @@ Partial Class jeu
         Me.Absent = New System.Windows.Forms.Label()
         Me.Present = New System.Windows.Forms.Label()
         Me.Present_et_Bien_Place = New System.Windows.Forms.Label()
-        Me.Btn_bye = New System.Windows.Forms.Button()
+        Me.Btn_revanche = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_textbox = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -143,15 +143,15 @@ Partial Class jeu
         Me.Present_et_Bien_Place.TabIndex = 30
         Me.Present_et_Bien_Place.Text = "Présent et Bien Placé"
         '
-        'Btn_bye
+        'Btn_revanche
         '
-        Me.Btn_bye.Location = New System.Drawing.Point(649, 666)
-        Me.Btn_bye.Name = "Btn_bye"
-        Me.Btn_bye.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_bye.TabIndex = 31
-        Me.Btn_bye.Text = "Bye"
-        Me.Btn_bye.UseVisualStyleBackColor = True
-        Me.Btn_bye.Visible = False
+        Me.Btn_revanche.Location = New System.Drawing.Point(649, 666)
+        Me.Btn_revanche.Name = "Btn_revanche"
+        Me.Btn_revanche.Size = New System.Drawing.Size(93, 23)
+        Me.Btn_revanche.TabIndex = 31
+        Me.Btn_revanche.Text = "Revanche ? :)"
+        Me.Btn_revanche.UseVisualStyleBackColor = True
+        Me.Btn_revanche.Visible = False
         '
         'Timer1
         '
@@ -306,7 +306,7 @@ Partial Class jeu
         Me.Controls.Add(Me.Label_e_restant)
         Me.Controls.Add(Me.Compteur)
         Me.Controls.Add(Me.Panel_textbox)
-        Me.Controls.Add(Me.Btn_bye)
+        Me.Controls.Add(Me.Btn_revanche)
         Me.Controls.Add(Me.Present_et_Bien_Place)
         Me.Controls.Add(Me.Present)
         Me.Controls.Add(Me.Absent)
@@ -332,7 +332,7 @@ Partial Class jeu
     Friend WithEvents Absent As Label
     Friend WithEvents Present As Label
     Friend WithEvents Present_et_Bien_Place As Label
-    Friend WithEvents Btn_bye As Button
+    Friend WithEvents Btn_revanche As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel_textbox As Panel
     Friend WithEvents TextBox1 As TextBox

@@ -4,11 +4,13 @@
 
     Public Joueur1 As Joueur
     Public Joueur2 As Joueur
+
     Sub add_joueur(j As Joueur)
         Joueurs.Add(j)
     End Sub
+
     Public Function get_joueurs() As List(Of Joueur)
-        Return Joueurs 'fonction à supprimé plus tard je la garde pr les tests
+        Return Joueurs
     End Function
     Public Function get_attributs_joueurs(getter_attribut As getter_delegate) As List(Of Object)
         Dim list_attribut As New List(Of Object)
@@ -28,9 +30,9 @@
 
 
 
-    Public Function joueur_connu(pseudo_joueur As String) As Boolean
+    Public Function get_index_joueur(pseudo_joueur As String) As Integer
         Dim nom_joueurs As List(Of Object) = get_attributs_joueurs(AddressOf mod_Liste_Joueurs.get_nom)
-        Return get_nom_joueurs.Contains(pseudo_joueur)
+        Return get_nom_joueurs.IndexOf(pseudo_joueur)
     End Function
 
     Public Function get_nom(j As Joueur) As String
@@ -53,4 +55,5 @@
     Public Function get_temp_cumul(j As Joueur) As Integer
         Return j.get_cumul_temp_joueur
     End Function
+
 End Module

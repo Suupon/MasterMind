@@ -123,19 +123,36 @@ Public Class jeu
             Compteur.Text = compteur_essai
         End If
 
-        If compteur_essai = 0 Then
+        If compteur_essai = 0 Or timer_count = 0 Then
             Timer1.Stop()
             Compteur.Text = 0
-            MessageBox.Show("Vous avez perdu!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Btn_bye.Visible = True
+            Label_timer.Visible = False
+            MessageBox.Show("Vous avez a perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            mod_Liste_Joueurs.Joueur1.inc_score()
+            mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+
+            Btn_revanche.Visible = True
+            btn_deviner.Enabled = False
+            Return
         End If
+
+
+
 
         If cpt_green = 0 Then
             Timer1.Stop()
-            MessageBox.Show("Vous avez terminé le jeu !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Btn_bye.Visible = True
+            MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Btn_revanche.Visible = True
+            mod_Liste_Joueurs.Joueur2.inc_score()
+            mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
 
+            If (mod_Liste_Joueurs.Joueur2.get_best_time_joueur > mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner()) Then
+
+                mod_Liste_Joueurs.Joueur2.set_best_time(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+            End If
+            btn_deviner.Enabled = False
+            Return
         End If
 
     End Sub
@@ -143,22 +160,20 @@ Public Class jeu
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         timer_count -= Timer1.Interval
         Label_timer.Text = CStr(timer_count / Timer1.Interval)
+        Joueur2.inc_tmp_temp_devine()
 
-
-        If timer_count = 0 Then
-            Timer1.Stop()
-            Label_timer.Visible = False
-            MessageBox.Show("Temps écoulé", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Btn_bye.Visible = True
-
-        End If
 
     End Sub
 
-    Private Sub Btn_bye_Click(sender As Object, e As EventArgs) Handles Btn_bye.Click
+    Private Sub Btn_revanche_Click(sender As Object, e As EventArgs) Handles Btn_revanche.Click
         Accueil.Show()
+        Accueil.cb_box_p1.Text = mod_Liste_Joueurs.Joueur2.get_nom_joueur
+        Accueil.cb_box_p2.Text = mod_Liste_Joueurs.Joueur1.get_nom_joueur
+        sauvegarde_joueurs(mod_Liste_Joueurs.Joueur1, mod_Liste_Joueurs.Joueur2)
+
         Me.Close()
     End Sub
+
 
 
 End Class

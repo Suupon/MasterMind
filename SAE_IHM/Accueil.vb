@@ -17,6 +17,7 @@ Public Class Accueil
 
 
 
+
     End Sub
 
 
@@ -39,29 +40,39 @@ Public Class Accueil
         cb.AutoCompleteCustomSource = nom_joueurs_source
     End Sub
     Private Sub btn_lancer_jeu_Click(sender As Object, e As EventArgs) Handles btn_lancer_jeu.Click
-        Dim j As Joueur
+        Dim pseudo_j1 As String = cb_box_p1.Text
+        Dim pseudo_j2 As String = cb_box_p2.Text
+
+        Dim index_j1 As Integer = mod_Liste_Joueurs.get_index_joueur(pseudo_j1)
+        Dim index_j2 As Integer = mod_Liste_Joueurs.get_index_joueur(pseudo_j2)
+
         If (pseudo_joueurs_valident(sender, e)) Then
 
+            If (index_j1 = -1) Then
+                mod_Liste_Joueurs.Joueur1 = New Joueur(pseudo_j1, 0, Integer.MaxValue, 0, 0, 0)
+                mod_Liste_Joueurs.add_joueur(mod_Liste_Joueurs.Joueur1)
 
-            If (Not mod_Liste_Joueurs.joueur_connu(cb_box_p1.Text)) Then
-                MsgBox("p1 inconu")
-                j = New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0)
-                mod_Liste_Joueurs.add_joueur(j)
-                'add_joueur_to_file(j)
+
+            Else
+                mod_Liste_Joueurs.Joueur1 = New Joueur(mod_fichier_joueurs.all_joueurs_str(index_j1).Split(";"))
             End If
 
-            If (Not mod_Liste_Joueurs.joueur_connu(cb_box_p2.Text)) Then
-                MsgBox("p2 inconu")
-                j = New Joueur(cb_box_p1.Text, -1, -1, 0, 0, 0)
-                mod_Liste_Joueurs.add_joueur(j)
-                'add_joueur_to_file(j)
+            If (index_j2 = -1) Then
+                mod_Liste_Joueurs.Joueur2 = New Joueur(pseudo_j2, 0, Integer.MaxValue, 0, 0, 0)
+                mod_Liste_Joueurs.add_joueur(mod_Liste_Joueurs.Joueur2)
+
+
+            Else
+                mod_Liste_Joueurs.Joueur2 = New Joueur(mod_fichier_joueurs.all_joueurs_str(index_j2).Split(";"))
 
             End If
+
+            mod_Liste_Joueurs.Joueur1.inc_partie_first()
+            mod_Liste_Joueurs.Joueur2.inc_partie_second()
             Me.Hide()
             Pattern_a_deviner.Show()
             Return
         End If
-        MsgBox("pas content")
     End Sub
 
     Private Sub btn_param_Click(sender As Object, e As EventArgs) Handles btn_param.Click
