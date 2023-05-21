@@ -73,6 +73,7 @@ Public Class Accueil
 
     Private Sub btn_param_Click(sender As Object, e As EventArgs) Handles btn_param.Click
         param.Show()
+
     End Sub
 
     Private Sub btn_stat_Click(sender As Object, e As EventArgs) Handles btn_stat.Click

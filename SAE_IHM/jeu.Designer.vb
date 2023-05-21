@@ -293,6 +293,7 @@ Partial Class jeu
         Me.RichTextBox_deviner.ReadOnly = True
         Me.RichTextBox_deviner.Size = New System.Drawing.Size(190, 219)
         Me.RichTextBox_deviner.TabIndex = 40
+        Me.RichTextBox_deviner.TabStop = False
         Me.RichTextBox_deviner.Text = ""
         '
         'jeu

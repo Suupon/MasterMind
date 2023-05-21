@@ -2,7 +2,7 @@
     Private Sub param_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' le 5 ne s'affiche quand on lance le form param
         load_nb_case_items()
-        cb_box_nb_cases.Text = mod_param.get_nb_case
+        cb_box_nb_cases.Text = mod_param.get_nb_case()
         txt_box_car_possibles.Text = mod_param.get_caractere_possibles
         txt_box_nb_essais.Text = mod_param.get_nb_essais
         btn_couleur_bon.BackColor = mod_param.get_color_bon
@@ -22,9 +22,9 @@
     End Sub
     Private Sub load_nb_case_items()
         cb_box_nb_cases.Items.Add(mod_param.MIN_NB_CASES & " (min)")
+
         For i As Integer = 4 To mod_param.MAX_NB_CASES - 1
             cb_box_nb_cases.Items.Add(i & " ")
-
         Next
         cb_box_nb_cases.Items.Add(mod_param.MAX_NB_CASES & " (max)")
 
@@ -91,4 +91,7 @@
             mod_param.set_color_abs(btn_couleur_abs.BackColor)
         End If
     End Sub
+
+
+
 End Class
