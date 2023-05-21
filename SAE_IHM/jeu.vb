@@ -71,33 +71,33 @@ Public Class jeu
                 Return
             End If
 
-        Next
-
-        For Each control As Control In Panel_textbox.Controls
-            If TypeOf control Is TextBox AndAlso control.Visible Then
-                tab_deviner1(index) = DirectCast(control, TextBox).Text
+            If textBox.Visible Then
+                tab_deviner1(index) = textBox.Text
                 index += 1
             End If
         Next
 
-        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
-            If mod_enregistrement.tab_pattern1(i) = mod_enregistrement.tab_deviner1(i) Then
+
+        For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
+
+            If mod_pattern.tab_pattern1(i) = mod_pattern.tab_deviner1(i) Then
                 Panel_textbox.Controls(i).BackColor = get_color_bon()
 
                 RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
                 cpt_green -= 1
-
             End If
-
+            If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
+                Panel_textbox.Controls(i).BackColor = get_color_abs()
+            End If
         Next
 
 
-        For i As Integer = mod_enregistrement.tab_pattern1.Length - 1 To 0 Step -1
+        For i As Integer = mod_pattern.tab_pattern1.Length - 1 To 0 Step -1
 
-            For j As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
+            For j As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
 
-                If mod_enregistrement.tab_deviner1(j) = mod_enregistrement.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
+                If mod_pattern.tab_deviner1(j) = mod_pattern.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
 
                     Panel_textbox.Controls(j).BackColor = get_color_mal_place()
 
@@ -106,15 +106,8 @@ Public Class jeu
             Next
         Next
 
-        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
 
-            If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
-                Panel_textbox.Controls(i).BackColor = get_color_abs()
-
-            End If
-        Next
-
-        For i As Integer = 0 To mod_enregistrement.tab_pattern1.Length - 1
+        For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
 
 
             RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
