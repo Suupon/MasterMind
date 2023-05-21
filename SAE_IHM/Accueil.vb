@@ -14,10 +14,6 @@ Public Class Accueil
         autocompletion_cb_box_joueurs(cb_box_p1, nom_joueurs_source)
         autocompletion_cb_box_joueurs(cb_box_p2, nom_joueurs_source)
 
-
-
-
-
     End Sub
 
 

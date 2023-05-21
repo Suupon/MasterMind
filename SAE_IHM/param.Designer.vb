@@ -130,7 +130,7 @@ Partial Class param
         '
         'btn_valide_param
         '
-        Me.btn_valide_param.Location = New System.Drawing.Point(600, 373)
+        Me.btn_valide_param.Location = New System.Drawing.Point(625, 375)
         Me.btn_valide_param.Name = "btn_valide_param"
         Me.btn_valide_param.Size = New System.Drawing.Size(75, 23)
         Me.btn_valide_param.TabIndex = 23
