@@ -45,7 +45,9 @@ Module mod_fichier_joueurs
 
         For Each j As Joueur In mod_Liste_Joueurs.get_joueurs
             enregistrement_joueur_str.Add(j.ToString)
+
         Next
+        all_joueurs_str = enregistrement_joueur_str.ToArray
         Dim index_j1 As Integer = mod_Liste_Joueurs.get_index_joueur(j1.get_nom_joueur)
         Dim index_j2 As Integer = mod_Liste_Joueurs.get_index_joueur(j2.get_nom_joueur)
 
