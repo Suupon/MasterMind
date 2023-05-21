@@ -25,7 +25,7 @@ Public Class statistique
         Dim nb_partie_2e_joueur As Integer
         Dim total_temp As Integer
         Dim joueurs_attributs As String()
-        For Each joueur_str As String In mod_Liste_Joueurs.get_joueurs_str
+        For Each joueur_str As String In mod_fichier_joueurs.all_joueurs_str
             joueurs_attributs = joueur_str.Split(";")
             nom = joueurs_attributs(0)
             meilleur_score = CInt(joueurs_attributs(1))
@@ -49,4 +49,30 @@ Public Class statistique
 
 
     End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub txt_box_nom_joueur_TextChanged(sender As Object, e As EventArgs) Handles txt_box_nom_joueur.TextChanged
+        DataGridView_Joueur.ClearSelection()
+        Dim searchText As String = txt_box_nom_joueur.Text.Trim()
+
+        For Each row As DataGridViewRow In DataGridView_Joueur.Rows
+            Dim cell As DataGridViewCell = row.Cells(0) ' Accéder à la première colonne (indice 0)
+
+            If cell.Value IsNot Nothing AndAlso cell.Value.ToString().StartsWith(txt_box_nom_joueur.Text, StringComparison.OrdinalIgnoreCase) Then
+                ' La valeur de la cellule correspond au critère de recherche
+                ' Faites quelque chose avec la ligne correspondante, par exemple, la sélectionner ou effectuer une action spécifique.
+                row.Selected = True
+                ' Autres actions...
+                DataGridView_Joueur.FirstDisplayedScrollingRowIndex = row.Index
+                Exit For ' Sortir de la boucle si une correspondance est trouvée dans la première colonne
+            End If
+        Next
+
+
+    End Sub
+
+
 End Class

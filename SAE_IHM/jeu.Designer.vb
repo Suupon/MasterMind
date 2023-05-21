@@ -49,6 +49,7 @@ Partial Class jeu
         Me.Label_temps = New System.Windows.Forms.Label()
         Me.Label_timer = New System.Windows.Forms.Label()
         Me.RichTextBox_deviner = New System.Windows.Forms.RichTextBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -249,49 +250,50 @@ Partial Class jeu
         'Compteur
         '
         Me.Compteur.AutoSize = True
-        Me.Compteur.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Compteur.Location = New System.Drawing.Point(179, 9)
+        Me.Compteur.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Compteur.Location = New System.Drawing.Point(199, 38)
         Me.Compteur.Name = "Compteur"
-        Me.Compteur.Size = New System.Drawing.Size(71, 19)
+        Me.Compteur.Size = New System.Drawing.Size(69, 17)
         Me.Compteur.TabIndex = 36
         Me.Compteur.Text = "Compteur"
         '
         'Label_e_restant
         '
         Me.Label_e_restant.AutoSize = True
-        Me.Label_e_restant.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_e_restant.Location = New System.Drawing.Point(12, 9)
+        Me.Label_e_restant.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label_e_restant.Location = New System.Drawing.Point(32, 38)
         Me.Label_e_restant.Name = "Label_e_restant"
-        Me.Label_e_restant.Size = New System.Drawing.Size(161, 19)
+        Me.Label_e_restant.Size = New System.Drawing.Size(163, 17)
         Me.Label_e_restant.TabIndex = 37
         Me.Label_e_restant.Text = "Nombre d'essai restant : "
         '
         'Label_temps
         '
         Me.Label_temps.AutoSize = True
-        Me.Label_temps.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_temps.Location = New System.Drawing.Point(12, 39)
+        Me.Label_temps.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label_temps.Location = New System.Drawing.Point(32, 68)
         Me.Label_temps.Name = "Label_temps"
-        Me.Label_temps.Size = New System.Drawing.Size(106, 19)
+        Me.Label_temps.Size = New System.Drawing.Size(107, 17)
         Me.Label_temps.TabIndex = 38
         Me.Label_temps.Text = "Temps restant : "
         '
         'Label_timer
         '
         Me.Label_timer.AutoSize = True
-        Me.Label_timer.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label_timer.Location = New System.Drawing.Point(124, 39)
+        Me.Label_timer.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label_timer.Location = New System.Drawing.Point(144, 68)
         Me.Label_timer.Name = "Label_timer"
-        Me.Label_timer.Size = New System.Drawing.Size(43, 19)
+        Me.Label_timer.Size = New System.Drawing.Size(44, 17)
         Me.Label_timer.TabIndex = 39
         Me.Label_timer.Text = "Timer"
         '
         'RichTextBox_deviner
         '
-        Me.RichTextBox_deviner.Location = New System.Drawing.Point(281, 285)
+        Me.RichTextBox_deviner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.RichTextBox_deviner.Location = New System.Drawing.Point(259, 285)
         Me.RichTextBox_deviner.Name = "RichTextBox_deviner"
         Me.RichTextBox_deviner.ReadOnly = True
-        Me.RichTextBox_deviner.Size = New System.Drawing.Size(190, 219)
+        Me.RichTextBox_deviner.Size = New System.Drawing.Size(212, 325)
         Me.RichTextBox_deviner.TabIndex = 40
         Me.RichTextBox_deviner.TabStop = False
         Me.RichTextBox_deviner.Text = ""
@@ -351,4 +353,5 @@ Partial Class jeu
     Friend WithEvents Label_temps As Label
     Friend WithEvents Label_timer As Label
     Friend WithEvents RichTextBox_deviner As RichTextBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

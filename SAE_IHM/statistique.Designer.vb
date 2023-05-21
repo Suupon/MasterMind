@@ -25,6 +25,8 @@ Partial Class statistique
         Me.DataGridView_Joueur = New System.Windows.Forms.DataGridView()
         Me.cb_box_choix_trie = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_box_nom_joueur = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.DataGridView_Joueur, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,6 +42,7 @@ Partial Class statistique
         '
         'cb_box_choix_trie
         '
+        Me.cb_box_choix_trie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_box_choix_trie.FormattingEnabled = True
         Me.cb_box_choix_trie.Location = New System.Drawing.Point(73, 75)
         Me.cb_box_choix_trie.Name = "cb_box_choix_trie"
@@ -55,11 +58,29 @@ Partial Class statistique
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Trié par : "
         '
+        'txt_box_nom_joueur
+        '
+        Me.txt_box_nom_joueur.Location = New System.Drawing.Point(423, 75)
+        Me.txt_box_nom_joueur.Name = "txt_box_nom_joueur"
+        Me.txt_box_nom_joueur.Size = New System.Drawing.Size(160, 23)
+        Me.txt_box_nom_joueur.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(423, 38)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(92, 15)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "nom du joueur :"
+        '
         'statistique
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 528)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txt_box_nom_joueur)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cb_box_choix_trie)
         Me.Controls.Add(Me.DataGridView_Joueur)
@@ -74,4 +95,6 @@ Partial Class statistique
     Friend WithEvents DataGridView_Joueur As DataGridView
     Friend WithEvents cb_box_choix_trie As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents txt_box_nom_joueur As TextBox
+    Friend WithEvents Label2 As Label
 End Class
