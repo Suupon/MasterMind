@@ -41,13 +41,7 @@ Module mod_fichier_joueurs
 
 
     Public Sub sauvegarde_joueurs(j1 As Joueur, j2 As Joueur)
-        Dim enregistrement_joueur_str As New List(Of String)
-
-        For Each j As Joueur In mod_Liste_Joueurs.get_joueurs
-            enregistrement_joueur_str.Add(j.ToString)
-
-        Next
-        all_joueurs_str = enregistrement_joueur_str.ToArray
+        Dim enregistrement_joueur_str As String() = mod_Liste_Joueurs.get_joueurs_str()
         Dim index_j1 As Integer = mod_Liste_Joueurs.get_index_joueur(j1.get_nom_joueur)
         Dim index_j2 As Integer = mod_Liste_Joueurs.get_index_joueur(j2.get_nom_joueur)
 

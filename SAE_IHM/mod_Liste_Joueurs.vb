@@ -12,6 +12,14 @@
     Public Function get_joueurs() As List(Of Joueur)
         Return Joueurs
     End Function
+    Public Function get_joueurs_str() As String()
+        Dim joueurs_str As New List(Of String)
+
+        For Each j As Joueur In mod_Liste_Joueurs.get_joueurs
+            joueurs_str.Add(j.ToString)
+        Next
+        Return joueurs_str.ToArray
+    End Function
     Public Function get_attributs_joueurs(getter_attribut As getter_delegate) As List(Of Object)
         Dim list_attribut As New List(Of Object)
         For Each j As Joueur In Joueurs

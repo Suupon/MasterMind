@@ -25,7 +25,7 @@ Public Class statistique
         Dim nb_partie_2e_joueur As Integer
         Dim total_temp As Integer
         Dim joueurs_attributs As String()
-        For Each joueur_str As String In mod_fichier_joueurs.all_joueurs_str
+        For Each joueur_str As String In mod_Liste_Joueurs.get_joueurs_str
             joueurs_attributs = joueur_str.Split(";")
             nom = joueurs_attributs(0)
             meilleur_score = CInt(joueurs_attributs(1))
