@@ -39,27 +39,22 @@ Module mod_fichier_joueurs
         Next
     End Sub
 
-    Private Function extract_pseudo_from_line(line As String) As String
-        ' "line" represente un joueur au format : nom;score;meilleur_temp;nb_partie_jouer_1er;nb_partie_jouer_2e;
-        ' retourne le nom du joueur 
-        Return line.Split(";")(0)
-    End Function
 
     Public Sub sauvegarde_joueurs(j1 As Joueur, j2 As Joueur)
-        Dim nom_joueur As String
-        For i As Integer = 0 To all_joueurs_str.Length
-            nom_joueur = all_joueurs_str(i).Split(";")(0)
-            If (nom_joueur.Equals(j1.get_nom_joueur)) Then
-                all_joueurs_str(i) = j1.ToString
-            End If
-            If (nom_joueur.Equals(j2.get_nom_joueur)) Then
-                all_joueurs_str(i) = j2.ToString
-            End If
+        Dim enregistrement_joueur_str As New List(Of String)
+
+        For Each j As Joueur In mod_Liste_Joueurs.get_joueurs
+            enregistrement_joueur_str.Add(j.ToString)
         Next
+        Dim index_j1 As Integer = mod_Liste_Joueurs.get_index_joueur(j1.get_nom_joueur)
+        Dim index_j2 As Integer = mod_Liste_Joueurs.get_index_joueur(j2.get_nom_joueur)
+
+        enregistrement_joueur_str(index_j1) = j1.ToString
+        enregistrement_joueur_str(index_j2) = j2.ToString
 
         If (File.Exists(file_path_joueurs)) Then
 
-            File.WriteAllLines(file_path_joueurs, all_joueurs_str, Encoding.UTF8)
+            File.WriteAllLines(file_path_joueurs, enregistrement_joueur_str, Encoding.UTF8)
         End If
     End Sub
 End Module
