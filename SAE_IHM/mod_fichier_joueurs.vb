@@ -52,5 +52,6 @@ Module mod_fichier_joueurs
 
             File.WriteAllLines(file_path_joueurs, enregistrement_joueur_str, Encoding.UTF8)
         End If
+        all_joueurs_str = mod_Liste_Joueurs.get_joueurs_str
     End Sub
 End Module
