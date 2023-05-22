@@ -13,6 +13,20 @@ Public Class Pattern_a_deviner
         AfficherTextBox()
 
     End Sub
+    Public Sub Pattern_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
+
+
+        ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
+        Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        ' Si l'utilisateur clique sur "Non", annuler la fermeture du formulaire
+        If result = DialogResult.No Then
+            e.Cancel = True
+        Else
+            Accueil.Show()
+
+        End If
+    End Sub
     Private Sub AfficherTextBox()
 
         Dim nbTextBox As Integer = get_nb_case()

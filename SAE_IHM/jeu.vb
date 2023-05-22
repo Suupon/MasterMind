@@ -59,8 +59,6 @@ Public Class jeu
     End Sub
 
     Private Sub btn_deviner_Click(sender As Object, e As EventArgs) Handles btn_deviner.Click
-
-
         Dim compteur_essai As Integer = Compteur.Text
         Dim index As Integer = 0
         Dim cpt_green As Integer = 0
@@ -69,7 +67,7 @@ Public Class jeu
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
-                MessageBox.Show("Veuillez remplir toutes les TextBox.")
+                MessageBox.Show("Veuillez remplir toutes les cases.")
                 Return
             End If
 
@@ -95,38 +93,8 @@ Public Class jeu
         mod_pattern.verif_couleur_bleu()
         mod_pattern.couleur_richtextbox()
 
-        For i As Integer = mod_pattern.tab_pattern1.Length - 1 To 0 Step -1
 
-            For j As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
-
-                If mod_pattern.tab_deviner1(j) = mod_pattern.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
-
-                    Panel_textbox.Controls(j).BackColor = get_color_mal_place()
-
-                End If
-
-            Next
-        Next
-
-
-        For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
-
-
-            RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
-            RichTextBox_deviner.Select(RichTextBox_deviner.TextLength - 1, 1)
-            RichTextBox_deviner.SelectionColor = Panel_textbox.Controls(i).BackColor
-
-        Next
-        RichTextBox_deviner.AppendText(vbCrLf)
-
-
-
-
-
-
-
-
-        If cpt_green <> 0 And compteur_essai = 0 Or timer_count = 0 Then
+        If compteur_essai = 0 Or timer_count = 0 Then
             Timer1.Stop()
             Compteur.Text = 0
             Label_timer.Visible = False
