@@ -13,7 +13,6 @@ Public Class Pattern_a_deviner
         AfficherTextBox()
 
     End Sub
-
     Public Sub Pattern_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
 
 
@@ -28,7 +27,6 @@ Public Class Pattern_a_deviner
 
         End If
     End Sub
-
     Private Sub AfficherTextBox()
 
         Dim nbTextBox As Integer = get_nb_case()
@@ -38,10 +36,10 @@ Public Class Pattern_a_deviner
             If TypeOf Panel_textbox.Controls(i) Is TextBox Then
                 Dim textBox As TextBox = Panel_textbox.Controls(i)
 
-                If i <nbTextBox Then
-                    textBox.Visible= True
+                If i < nbTextBox Then
+                    textBox.Visible = True
                 Else
-                    textBox.Visible= False
+                    textBox.Visible = False
                 End If
             End If
         Next
