@@ -59,15 +59,17 @@ Public Class jeu
     End Sub
 
     Private Sub btn_deviner_Click(sender As Object, e As EventArgs) Handles btn_deviner.Click
-        ReDim tab_deviner1(get_nb_case() - 1)
+
+
         Dim compteur_essai As Integer = Compteur.Text
         Dim index As Integer = 0
         Dim cpt_green As Integer = get_nb_case()
         Dim cpt_msgbox As Integer = 0
+        ReDim tab_deviner1(get_nb_case() - 1)
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
-                MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
+                MessageBox.Show("Veuillez remplir toutes les TextBox.")
                 Return
             End If
 
@@ -76,8 +78,6 @@ Public Class jeu
                 index += 1
             End If
         Next
-
-
 
         For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
 
@@ -92,38 +92,15 @@ Public Class jeu
             End If
         Next
 
-
-        For i As Integer = mod_pattern.tab_pattern1.Length - 1 To 0 Step -1
-
-            For j As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
-
-                If mod_pattern.tab_deviner1(j) = mod_pattern.tab_pattern1(i) And Panel_textbox.Controls(j).BackColor <> Color.Green Then
-
-                    Panel_textbox.Controls(j).BackColor = get_color_mal_place()
-
-                End If
-
-            Next
-        Next
-
-
-        For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
-
-
-            RichTextBox_deviner.AppendText(Panel_textbox.Controls(i).Text)
-            RichTextBox_deviner.Select(RichTextBox_deviner.TextLength - 1, 1)
-            RichTextBox_deviner.SelectionColor = Panel_textbox.Controls(i).BackColor
-
-        Next
-        RichTextBox_deviner.AppendText(vbCrLf)
-
+        mod_pattern.verif_couleur_bleu()
+        mod_pattern.couleur_richtextbox()
 
         If compteur_essai > 0 Then
             compteur_essai -= 1
             Compteur.Text = compteur_essai
         End If
 
-        If compteur_essai = 0 Or timer_count = 0 Then
+        If cpt_green <> 0 And compteur_essai = 0 Or timer_count = 0 Then
             Timer1.Stop()
             Compteur.Text = 0
             Label_timer.Visible = False
@@ -136,9 +113,6 @@ Public Class jeu
             btn_deviner.Enabled = False
             Return
         End If
-
-
-
 
         If cpt_green = 0 Then
             Timer1.Stop()
@@ -166,6 +140,7 @@ Public Class jeu
     End Sub
 
     Private Sub Btn_revanche_Click(sender As Object, e As EventArgs) Handles Btn_revanche.Click
+
         Accueil.Show()
         Accueil.cb_box_p1.Text = mod_Liste_Joueurs.Joueur2.get_nom_joueur
         Accueil.cb_box_p2.Text = mod_Liste_Joueurs.Joueur1.get_nom_joueur
