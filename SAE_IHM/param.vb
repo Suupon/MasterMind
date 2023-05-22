@@ -1,6 +1,8 @@
-﻿Public Class param
+﻿Imports System.IO
+Imports System.Text
+
+Public Class param
     Private Sub param_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' le 5 ne s'affiche quand on lance le form param
         load_nb_case_items()
         cb_box_nb_cases.Text = mod_param.get_nb_case & " "
         txt_box_car_possibles.Text = mod_param.get_caractere_possibles
@@ -91,5 +93,17 @@
         End If
     End Sub
 
+    Private Sub btn_sauvegarde_path_Click(sender As Object, e As EventArgs) Handles btn_sauvegarde_path.Click
+        Dim SF_dialog As New SaveFileDialog
+        Dim old_path As String = mod_param.get_file_path_joueur
+        SF_dialog.Filter = "txt|*.txt"
+        If SF_dialog.ShowDialog = 1 Then
+            mod_param.set_file_path_joueur(SF_dialog.FileName)
+            mod_param.get_param_str()(8) = "save_path_joueurs=" & SF_dialog.FileName
+            File.WriteAllLines(mod_param.file_path_param, mod_param.get_param_str(), Encoding.UTF8)
+            File.WriteAllLines(SF_dialog.FileName, mod_Liste_Joueurs.get_joueurs_str(), Encoding.UTF8)
+            File.Delete(old_path)
+        End If
 
+    End Sub
 End Class

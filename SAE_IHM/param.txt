@@ -6,3 +6,4 @@ nb_essais=15
 color_bon=Green
 color_mal_place=Blue
 color_abs=Red
+save_path_joueurs=C:\Users\Hurtcraft\Desktop\hergf.txt
