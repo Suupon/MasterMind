@@ -12,21 +12,32 @@ Public Class Pattern_a_deviner
         Next
         AfficherTextBox()
 
+
+
     End Sub
+
+
+
     Public Sub Pattern_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
 
+        If fermer = True Then
+            ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
+            Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
-        Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            ' Si l'utilisateur clique sur "Non", annuler la fermeture du formulaire
+            If result = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Accueil.Show()
 
-        ' Si l'utilisateur clique sur "Non", annuler la fermeture du formulaire
-        If result = DialogResult.No Then
-            e.Cancel = True
-        Else
-            Accueil.Show()
+
+            End If
 
         End If
+
+
     End Sub
+
     Private Sub AfficherTextBox()
 
         Dim nbTextBox As Integer = get_nb_case()
@@ -67,7 +78,7 @@ Public Class Pattern_a_deviner
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
-                MessageBox.Show("Veuillez remplir toutes les TextBox avant de passer au formulaire suivant.")
+                MessageBox.Show("Veuillez remplir toutes les cases pour passer à la suite.")
                 Return
             End If
 
@@ -83,6 +94,7 @@ Public Class Pattern_a_deviner
         Next
 
         jeu.Show()
+        fermer = False
         Me.Close()
 
     End Sub
@@ -90,4 +102,6 @@ Public Class Pattern_a_deviner
     Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
 
     End Sub
+
+
 End Class

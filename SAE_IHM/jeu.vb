@@ -15,11 +15,13 @@ Public Class jeu
         Present.ForeColor = mod_param.get_color_mal_place()
         Absent.ForeColor = mod_param.get_color_abs()
 
-        Timer1.Start()
+
         Label_timer.Text = mod_param.get_timer()
+        timer_count = mod_param.get_timer() * Timer1.Interval()
         Compteur.Text = mod_param.get_nb_essais()
         char_guess.Text = mod_param.get_caractere_possibles()
         AfficherTextBox()
+        Timer1.Start()
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             textBox.MaxLength = 1
@@ -94,35 +96,18 @@ Public Class jeu
         mod_pattern.couleur_richtextbox()
 
 
-        If compteur_essai = 0 Or timer_count = 0 Then
-            Timer1.Stop()
-            Compteur.Text = 0
-            Label_timer.Visible = False
-            MessageBox.Show("Vous avez a perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            mod_Liste_Joueurs.Joueur1.inc_score()
-            mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
-
-            Btn_revanche.Visible = True
-            btn_deviner.Enabled = False
-            Return
-        End If
-
-
+        'Quand le joueur gagne' 
         If cpt_green = get_nb_case() Then
-            Timer1.Stop()
-            MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Btn_revanche.Visible = True
-            mod_Liste_Joueurs.Joueur2.inc_score()
-            mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
-
-            If (mod_Liste_Joueurs.Joueur2.get_best_time_joueur > mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner()) Then
-
-                mod_Liste_Joueurs.Joueur2.set_best_time(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
-            End If
-            btn_deviner.Enabled = False
-            Return
+            mod_pattern.Gagner()
         End If
+
+
+        If compteur_essai = 1 And cpt_green <> get_nb_case() Then
+            mod_pattern.perdu()
+
+        End If
+
+
 
         If compteur_essai > 0 Then
             compteur_essai -= 1
@@ -137,6 +122,13 @@ Public Class jeu
         timer_count -= Timer1.Interval
         Label_timer.Text = CStr(timer_count / Timer1.Interval)
         Joueur2.inc_tmp_temp_devine()
+
+        If timer_count = 0 Then
+            mod_pattern.perdu()
+
+
+        End If
+
 
 
     End Sub

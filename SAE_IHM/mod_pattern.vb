@@ -1,7 +1,12 @@
-﻿Module mod_pattern
+﻿Imports Microsoft.VisualBasic.Devices
+Imports System.Threading
+Imports System.Timers
+
+Module mod_pattern
     Public tab_pattern1() As String
     Public tab_deviner1() As String
     Public timer_count As Integer = mod_param.get_timer() * jeu.Timer1.Interval
+    Public fermer As Boolean = True
 
     Public Sub couleur_richtextbox()
 
@@ -34,5 +39,35 @@
         Next
 
 
+    End Sub
+
+
+    Public Sub perdu()
+
+        jeu.Timer1.Stop()
+        jeu.Compteur.Text = 0
+        jeu.Label_timer.Visible = False
+        MessageBox.Show("Vous avez a perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        mod_Liste_Joueurs.Joueur1.inc_score()
+        mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+
+        jeu.Btn_revanche.Visible = True
+        jeu.btn_deviner.Enabled = False
+        Return
+    End Sub
+    Public Sub Gagner()
+        jeu.Timer1.Stop()
+        MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        jeu.Btn_revanche.Visible = True
+        mod_Liste_Joueurs.Joueur2.inc_score()
+        mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+
+        If (mod_Liste_Joueurs.Joueur2.get_best_time_joueur > mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner()) Then
+
+            mod_Liste_Joueurs.Joueur2.set_best_time(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+        End If
+        jeu.btn_deviner.Enabled = False
+        Return
     End Sub
 End Module
