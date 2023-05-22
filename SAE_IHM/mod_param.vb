@@ -1,7 +1,8 @@
 ﻿Imports System.IO
 
 Module mod_param
-    Private file_path_param = "..\..\..\param.txt"
+    Public file_path_param = "..\..\..\param.txt"
+    Private param_str As String() = File.ReadAllLines(file_path_param)
     'Public param_str = File.ReadAllLines(file_path_param)
     Public Const MAX_NB_CASES = 10
     Public Const MIN_NB_CASES = 3
@@ -15,6 +16,7 @@ Module mod_param
     Private color_mal_place As Color
     Private color_abs As Color
 
+    Private file_path_joueur As String
     Public Sub load_param()
         Dim param_str As String() = File.ReadAllLines(file_path_param)
         nb_case = CInt(param_str(0).Split("=")(1))
@@ -27,8 +29,11 @@ Module mod_param
         color_mal_place = Color.FromName(param_str(6).Split("=")(1))
         color_abs = Color.FromName(param_str(7).Split("=")(1))
 
+        file_path_joueur = param_str(8).Split("=")(1)
     End Sub
-
+    Public Function get_param_str() As String()
+        Return param_str
+    End Function
 
     Public Function get_nb_case() As Integer
         Return nb_case
@@ -56,6 +61,9 @@ Module mod_param
         Return color_abs
     End Function
 
+    Public Function get_file_path_joueur() As String
+        Return file_path_joueur
+    End Function
 
     Public Sub set_nb_case(x As Integer)
         nb_case = x
@@ -84,5 +92,8 @@ Module mod_param
         color_abs = c
     End Sub
 
+    Public Sub set_file_path_joueur(file_path As String)
+        file_path_joueur = file_path
+    End Sub
 
 End Module

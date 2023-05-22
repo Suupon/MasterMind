@@ -2,14 +2,15 @@
 Imports System.Text
 
 Public Class Accueil
-    Private Sub test(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        MsgBox("dzifn,e")
+    Public Sub Accueil_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
+        If MessageBox.Show("voulez vous vraiment nous quitté ou avez vous juste missclick?", ";-;", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
+            e.Cancel = True
+        End If
     End Sub
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Dim lst_joueurs_connus As String() = IO.File.ReadAllLines("E:\VBA\IHM_SAE\IHM_SAE\lst_joueurs.txt")
-
-        mod_fichier_joueurs.load_joueurs()
         mod_param.load_param()
+        mod_fichier_joueurs.load_joueurs()
+
 
 
         Dim nom_joueurs_source As New AutoCompleteStringCollection()
@@ -53,7 +54,7 @@ Public Class Accueil
 
 
             Else
-                mod_Liste_Joueurs.Joueur1 = New Joueur(mod_fichier_joueurs.all_joueurs_str(index_j1).Split(";"))
+                mod_Liste_Joueurs.Joueur1 = New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j1).Split(";"))
             End If
 
             If (index_j2 = -1) Then
@@ -62,7 +63,7 @@ Public Class Accueil
 
 
             Else
-                mod_Liste_Joueurs.Joueur2 = New Joueur(mod_fichier_joueurs.all_joueurs_str(index_j2).Split(";"))
+                mod_Liste_Joueurs.Joueur2 = New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j2).Split(";"))
 
             End If
 
@@ -70,16 +71,18 @@ Public Class Accueil
             mod_Liste_Joueurs.Joueur2.inc_partie_second()
 
             Pattern_a_deviner.Show()
+            Me.Hide()
             Return
         End If
     End Sub
 
     Private Sub btn_param_Click(sender As Object, e As EventArgs) Handles btn_param.Click
         param.Show()
-
     End Sub
 
     Private Sub btn_stat_Click(sender As Object, e As EventArgs) Handles btn_stat.Click
         statistique.Show()
     End Sub
+
+
 End Class

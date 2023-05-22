@@ -1,6 +1,7 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
 Public Class Pattern_a_deviner
+
     Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         char_guess.Text = get_caractere_possibles()
