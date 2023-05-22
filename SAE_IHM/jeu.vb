@@ -62,7 +62,7 @@ Public Class jeu
         ReDim tab_deviner1(get_nb_case() - 1)
         Dim compteur_essai As Integer = Compteur.Text
         Dim index As Integer = 0
-        Dim cpt_green As Integer = get_nb_case()
+        Dim cpt_green As Integer = 0
         Dim cpt_msgbox As Integer = 0
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
@@ -85,7 +85,7 @@ Public Class jeu
                 Panel_textbox.Controls(i).BackColor = get_color_bon()
 
                 RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
-                cpt_green -= 1
+                cpt_green += 1
             End If
             If Panel_textbox.Controls(i).BackColor <> Color.Green And Panel_textbox.Controls(i).BackColor <> Color.Blue Then
                 Panel_textbox.Controls(i).BackColor = get_color_abs()
@@ -118,10 +118,11 @@ Public Class jeu
         RichTextBox_deviner.AppendText(vbCrLf)
 
 
-        If compteur_essai > 0 Then
-            compteur_essai -= 1
-            Compteur.Text = compteur_essai
-        End If
+
+
+
+
+
 
         If compteur_essai = 0 Or timer_count = 0 Then
             Timer1.Stop()
@@ -138,9 +139,7 @@ Public Class jeu
         End If
 
 
-
-
-        If cpt_green = 0 Then
+        If cpt_green = get_nb_case() Then
             Timer1.Stop()
             MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Btn_revanche.Visible = True
@@ -154,6 +153,13 @@ Public Class jeu
             btn_deviner.Enabled = False
             Return
         End If
+
+        If compteur_essai > 0 Then
+            compteur_essai -= 1
+            Compteur.Text = compteur_essai
+        End If
+
+
 
     End Sub
 

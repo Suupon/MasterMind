@@ -2,6 +2,9 @@
 Imports System.Text
 
 Public Class Accueil
+    Private Sub test(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        MsgBox("dzifn,e")
+    End Sub
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim lst_joueurs_connus As String() = IO.File.ReadAllLines("E:\VBA\IHM_SAE\IHM_SAE\lst_joueurs.txt")
 
@@ -65,7 +68,7 @@ Public Class Accueil
 
             mod_Liste_Joueurs.Joueur1.inc_partie_first()
             mod_Liste_Joueurs.Joueur2.inc_partie_second()
-            Me.Hide()
+
             Pattern_a_deviner.Show()
             Return
         End If
