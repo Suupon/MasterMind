@@ -15,9 +15,12 @@ Public Class jeu
         Present.ForeColor = mod_param.get_color_mal_place()
         Absent.ForeColor = mod_param.get_color_abs()
 
+        set_timer_count(get_timer() * Timer1.Interval)
+
+
 
         Label_timer.Text = mod_param.get_timer()
-        timer_count = mod_param.get_timer() * Timer1.Interval()
+
         Compteur.Text = mod_param.get_nb_essais()
         char_guess.Text = mod_param.get_caractere_possibles()
         AfficherTextBox()
@@ -28,6 +31,26 @@ Public Class jeu
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
         Next
 
+        set_fermer_jeu(True)
+
+    End Sub
+
+    Public Sub Jeu_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
+
+        If get_fermer_jeu() = True Then
+            ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
+            Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            ' Si l'utilisateur clique sur "Non", annuler la fermeture du formulaire
+            If result = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Accueil.Show()
+
+
+            End If
+
+        End If
     End Sub
     Private Sub AfficherTextBox()
 
@@ -65,7 +88,7 @@ Public Class jeu
         Dim index As Integer = 0
         Dim cpt_green As Integer = 0
         Dim cpt_msgbox As Integer = 0
-        ReDim tab_deviner1(get_nb_case() - 1)
+        redim_tab_deviner(get_nb_case() - 1)
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
@@ -74,14 +97,14 @@ Public Class jeu
             End If
 
             If textBox.Visible Then
-                tab_deviner1(index) = textBox.Text
+                set_tab_deviner(index, textBox.Text)
                 index += 1
             End If
         Next
 
-        For i As Integer = 0 To mod_pattern.tab_pattern1.Length - 1
+        For i As Integer = 0 To getlength_tab_pattern1() - 1
 
-            If mod_pattern.tab_pattern1(i) = mod_pattern.tab_deviner1(i) Then
+            If getval_tab_pattern1(i) = getval_tab_deviner(i) Then
                 Panel_textbox.Controls(i).BackColor = get_color_bon()
 
                 RichTextBox_deviner.ForeColor = Panel_textbox.Controls(i).BackColor
@@ -119,11 +142,11 @@ Public Class jeu
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        timer_count -= Timer1.Interval
-        Label_timer.Text = CStr(timer_count / Timer1.Interval)
-        Joueur2.inc_tmp_temp_devine()
+        set_timer_count(get_timer_count() - Timer1.Interval)
+        Label_timer.Text = CStr(get_timer_count() / Timer1.Interval)
+        get_joueur2().inc_tmp_temp_devine()
 
-        If timer_count = 0 Then
+        If get_timer_count() = 0 Then
             mod_pattern.perdu()
 
 
@@ -136,10 +159,11 @@ Public Class jeu
     Private Sub Btn_revanche_Click(sender As Object, e As EventArgs) Handles Btn_revanche.Click
 
         Accueil.Show()
-        Accueil.cb_box_p1.Text = mod_Liste_Joueurs.Joueur2.get_nom_joueur
-        Accueil.cb_box_p2.Text = mod_Liste_Joueurs.Joueur1.get_nom_joueur
-        sauvegarde_joueurs(mod_Liste_Joueurs.Joueur1, mod_Liste_Joueurs.Joueur2)
+        Accueil.cb_box_p1.Text = get_joueur2.get_nom_joueur
+        Accueil.cb_box_p2.Text = get_joueur1.get_nom_joueur
+        sauvegarde_joueurs(get_joueur1, get_joueur2)
 
+        set_fermer_jeu(False)
         Me.Close()
     End Sub
 

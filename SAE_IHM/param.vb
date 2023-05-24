@@ -100,7 +100,7 @@ Public Class param
         If SF_dialog.ShowDialog = 1 Then
             mod_param.set_file_path_joueur(SF_dialog.FileName)
             mod_param.get_param_str()(8) = "save_path_joueurs=" & SF_dialog.FileName
-            File.WriteAllLines(mod_param.file_path_param, mod_param.get_param_str(), Encoding.UTF8)
+            File.WriteAllLines(get_file_path_param, mod_param.get_param_str(), Encoding.UTF8)
             File.WriteAllLines(SF_dialog.FileName, mod_Liste_Joueurs.get_joueurs_str(), Encoding.UTF8)
             File.Delete(old_path)
         End If

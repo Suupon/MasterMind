@@ -51,26 +51,26 @@ Public Class Accueil
         If (pseudo_joueurs_valident(sender, e)) Then
 
             If (index_j1 = -1) Then
-                mod_Liste_Joueurs.Joueur1 = New Joueur(pseudo_j1, 0, Integer.MaxValue, 0, 0, 0)
-                mod_Liste_Joueurs.add_joueur(mod_Liste_Joueurs.Joueur1)
+                set_joueur1(New Joueur(pseudo_j1, 0, Integer.MaxValue, 0, 0, 0))
+                mod_Liste_Joueurs.add_joueur(get_joueur1)
 
 
             Else
-                mod_Liste_Joueurs.Joueur1 = New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j1).Split(";"))
+                set_joueur1(New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j1).Split(";")))
             End If
 
             If (index_j2 = -1) Then
-                mod_Liste_Joueurs.Joueur2 = New Joueur(pseudo_j2, 0, Integer.MaxValue, 0, 0, 0)
-                mod_Liste_Joueurs.add_joueur(mod_Liste_Joueurs.Joueur2)
+                set_joueur2(New Joueur(pseudo_j2, 0, Integer.MaxValue, 0, 0, 0))
+                mod_Liste_Joueurs.add_joueur(get_joueur2())
 
 
             Else
-                mod_Liste_Joueurs.Joueur2 = New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j2).Split(";"))
+                set_joueur2(New Joueur(mod_Liste_Joueurs.get_joueurs_str(index_j2).Split(";")))
 
             End If
 
-            mod_Liste_Joueurs.Joueur1.inc_partie_first()
-            mod_Liste_Joueurs.Joueur2.inc_partie_second()
+            get_joueur1().inc_partie_first()
+            get_joueur2.inc_partie_second()
 
             Pattern_a_deviner.Show()
             Me.Hide()

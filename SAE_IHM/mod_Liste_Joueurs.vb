@@ -2,8 +2,8 @@
     Private Joueurs As New List(Of Joueur)
     Delegate Function getter_delegate(j As Joueur) As Object
 
-    Public Joueur1 As Joueur
-    Public Joueur2 As Joueur
+    Private Joueur1 As Joueur
+    Private Joueur2 As Joueur
 
     Sub add_joueur(j As Joueur)
         Joueurs.Add(j)
@@ -64,4 +64,22 @@
         Return j.get_cumul_temp_joueur
     End Function
 
+    Public Function get_joueur1() As Joueur
+        Return Joueur1
+    End Function
+
+    Public Function get_joueur2() As Joueur
+        Return Joueur2
+    End Function
+
+
+    Public Sub set_joueur1(j As Joueur)
+        Joueur1 = j
+
+    End Sub
+
+    Public Sub set_joueur2(j As Joueur)
+        Joueur2 = j
+
+    End Sub
 End Module
