@@ -10,6 +10,7 @@ Public Class Accueil
         End If
     End Sub
     Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        background_accueil.Image = Image.FromFile("../../../img/background_accueil.png")
         mod_param.load_param()
         mod_fichier_joueurs.load_joueurs()
 
@@ -43,6 +44,7 @@ Public Class Accueil
         cb.AutoCompleteCustomSource = nom_joueurs_source
     End Sub
     Private Sub btn_lancer_jeu_Click(sender As Object, e As EventArgs) Handles btn_lancer_jeu.Click
+
         Dim pseudo_j1 As String = cb_box_p1.Text
         Dim pseudo_j2 As String = cb_box_p2.Text
 

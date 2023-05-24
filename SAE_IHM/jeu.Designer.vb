@@ -50,7 +50,12 @@ Partial Class jeu
         Me.Label_timer = New System.Windows.Forms.Label()
         Me.RichTextBox_deviner = New System.Windows.Forms.RichTextBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.its_fine_picture = New System.Windows.Forms.PictureBox()
+        Me.lb_pov = New System.Windows.Forms.Label()
+        Me.pp_thinking_img = New System.Windows.Forms.PictureBox()
         Me.Panel_textbox.SuspendLayout()
+        CType(Me.its_fine_picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pp_thinking_img, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'char_guess
@@ -298,11 +303,42 @@ Partial Class jeu
         Me.RichTextBox_deviner.TabStop = False
         Me.RichTextBox_deviner.Text = ""
         '
+        'its_fine_picture
+        '
+        Me.its_fine_picture.Location = New System.Drawing.Point(1, 361)
+        Me.its_fine_picture.Name = "its_fine_picture"
+        Me.its_fine_picture.Size = New System.Drawing.Size(252, 201)
+        Me.its_fine_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.its_fine_picture.TabIndex = 41
+        Me.its_fine_picture.TabStop = False
+        '
+        'lb_pov
+        '
+        Me.lb_pov.AutoSize = True
+        Me.lb_pov.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lb_pov.Location = New System.Drawing.Point(20, 305)
+        Me.lb_pov.Name = "lb_pov"
+        Me.lb_pov.Size = New System.Drawing.Size(0, 15)
+        Me.lb_pov.TabIndex = 42
+        '
+        'pp_thinking_img
+        '
+        Me.pp_thinking_img.Location = New System.Drawing.Point(598, 95)
+        Me.pp_thinking_img.Name = "pp_thinking_img"
+        Me.pp_thinking_img.Size = New System.Drawing.Size(85, 90)
+        Me.pp_thinking_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pp_thinking_img.TabIndex = 43
+        Me.pp_thinking_img.TabStop = False
+        '
         'jeu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(790, 785)
+        Me.Controls.Add(Me.pp_thinking_img)
+        Me.Controls.Add(Me.lb_pov)
+        Me.Controls.Add(Me.its_fine_picture)
         Me.Controls.Add(Me.RichTextBox_deviner)
         Me.Controls.Add(Me.Label_timer)
         Me.Controls.Add(Me.Label_temps)
@@ -322,6 +358,8 @@ Partial Class jeu
         Me.Text = "jeu"
         Me.Panel_textbox.ResumeLayout(False)
         Me.Panel_textbox.PerformLayout()
+        CType(Me.its_fine_picture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pp_thinking_img, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -354,4 +392,7 @@ Partial Class jeu
     Friend WithEvents Label_timer As Label
     Friend WithEvents RichTextBox_deviner As RichTextBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents its_fine_picture As PictureBox
+    Friend WithEvents lb_pov As Label
+    Friend WithEvents pp_thinking_img As PictureBox
 End Class

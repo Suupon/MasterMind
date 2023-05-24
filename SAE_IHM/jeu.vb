@@ -2,9 +2,14 @@
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 
 Public Class jeu
-
+    Private image_its_fine As Image = Image.FromFile("..\..\..\img\its_fine.png")
+    Private image_PP As Image = Image.FromFile("..\..\..\img\pp.png")
+    Private image_PP_thinking As Image = Image.FromFile("..\..\..\img\pp_thinking.png")
     Private Sub jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Recenter_panel()
+        its_fine_picture.Visible = False
+        its_fine_picture.Image = image_its_fine
+        pp_thinking_img.Image = image_PP_thinking
         If get_use_time() = False Then
             Timer1.Enabled = False
             Label_timer.Visible = False
@@ -124,8 +129,11 @@ Public Class jeu
             mod_pattern.Gagner()
         End If
 
-
+        If compteur_essai = 3 Then
+            afficher_its_fine()
+        End If
         If compteur_essai = 1 And cpt_green <> get_nb_case() Then
+            afficher_PP()
             mod_pattern.perdu()
 
         End If
@@ -148,7 +156,7 @@ Public Class jeu
 
         If get_timer_count() = 0 Then
             mod_pattern.perdu()
-
+            afficher_PP()
 
         End If
 
@@ -176,4 +184,14 @@ Public Class jeu
 
     End Sub
 
+    Private Sub afficher_its_fine()
+        its_fine_picture.Visible = True
+        lb_pov.Text = "POV Joueur 2 quand il lui reste 2 essais:"
+    End Sub
+    Private Sub afficher_PP()
+        its_fine_picture.Visible = True
+        its_fine_picture.Image = image_PP
+        lb_pov.Text = "Ce gros nul de Joueur 2 a perdu :/"
+
+    End Sub
 End Class

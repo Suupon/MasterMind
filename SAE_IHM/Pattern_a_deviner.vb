@@ -4,8 +4,10 @@ Public Class Pattern_a_deviner
 
     Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Recenter_panel()
-        char_guess.Text = get_caractere_possibles()
 
+        char_guess.Text = get_caractere_possibles()
+        pp_bigbrain.Image = Image.FromFile("..\..\..\img\pp_big_brain.png")
+        patrick_img.Image = Image.FromFile("..\..\..\img\patrick.png")
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             textBox.MaxLength = 1
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
@@ -108,5 +110,6 @@ Public Class Pattern_a_deviner
         Panel_textbox.Location = New System.Drawing.Point(x, 182)
 
     End Sub
+
 
 End Class

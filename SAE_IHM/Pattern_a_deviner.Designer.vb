@@ -37,7 +37,12 @@ Partial Class Pattern_a_deviner
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.textbox10 = New System.Windows.Forms.TextBox()
+        Me.patrick_img = New System.Windows.Forms.PictureBox()
+        Me.pp_bigbrain = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_textbox.SuspendLayout()
+        CType(Me.patrick_img, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pp_bigbrain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'label_mastermind
@@ -172,11 +177,43 @@ Partial Class Pattern_a_deviner
         Me.textbox10.Size = New System.Drawing.Size(40, 23)
         Me.textbox10.TabIndex = 9
         '
+        'patrick_img
+        '
+        Me.patrick_img.Location = New System.Drawing.Point(705, 98)
+        Me.patrick_img.Name = "patrick_img"
+        Me.patrick_img.Size = New System.Drawing.Size(85, 74)
+        Me.patrick_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.patrick_img.TabIndex = 18
+        Me.patrick_img.TabStop = False
+        '
+        'pp_bigbrain
+        '
+        Me.pp_bigbrain.Location = New System.Drawing.Point(61, 261)
+        Me.pp_bigbrain.Name = "pp_bigbrain"
+        Me.pp_bigbrain.Size = New System.Drawing.Size(244, 237)
+        Me.pp_bigbrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pp_bigbrain.TabIndex = 19
+        Me.pp_bigbrain.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(254, 356)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(382, 21)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "< Choisissez une combinaison bien dur à deviner"
+        '
         'Pattern_a_deviner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(933, 519)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.pp_bigbrain)
+        Me.Controls.Add(Me.patrick_img)
         Me.Controls.Add(Me.Panel_textbox)
         Me.Controls.Add(Me.char_guess)
         Me.Controls.Add(Me.char_jouable)
@@ -187,6 +224,8 @@ Partial Class Pattern_a_deviner
         Me.Text = "Pattern à deviner"
         Me.Panel_textbox.ResumeLayout(False)
         Me.Panel_textbox.PerformLayout()
+        CType(Me.patrick_img, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pp_bigbrain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -207,5 +246,7 @@ Partial Class Pattern_a_deviner
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents textbox10 As TextBox
-
+    Friend WithEvents patrick_img As PictureBox
+    Friend WithEvents pp_bigbrain As PictureBox
+    Friend WithEvents Label1 As Label
 End Class
