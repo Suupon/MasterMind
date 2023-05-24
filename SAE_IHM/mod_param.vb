@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Module mod_param
-    Public file_path_param = "..\..\..\param.txt"
+    Private file_path_param = "..\..\..\param.txt"
     Private param_str As String() = File.ReadAllLines(file_path_param)
     'Public param_str = File.ReadAllLines(file_path_param)
     Public Const MAX_NB_CASES = 10
@@ -18,7 +18,8 @@ Module mod_param
 
     Private file_path_joueur As String
     Public Sub load_param()
-        Dim param_str As String() = File.ReadAllLines(file_path_param)
+
+        Dim param_str As String() = File.ReadAllLines(get_file_path_param())
         nb_case = CInt(param_str(0).Split("=")(1))
         caractere_possibles = param_str(1).Split("=")(1)
         use_time = CBool(param_str(2).Split("=")(1))
@@ -95,5 +96,12 @@ Module mod_param
     Public Sub set_file_path_joueur(file_path As String)
         file_path_joueur = file_path
     End Sub
+
+
+
+    Public Function get_file_path_param() As String
+        Return file_path_param
+    End Function
+
 
 End Module

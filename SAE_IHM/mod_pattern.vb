@@ -1,12 +1,15 @@
 ﻿Imports Microsoft.VisualBasic.Devices
+Imports System.Security.Cryptography.Pkcs
 Imports System.Threading
 Imports System.Timers
 
 Module mod_pattern
-    Public tab_pattern1() As String
-    Public tab_deviner1() As String
-    Public timer_count As Integer = mod_param.get_timer() * jeu.Timer1.Interval
-    Public fermer As Boolean = True
+    Private tab_pattern1() As String
+    Private tab_deviner1() As String
+    Private timer_count As Integer
+    Private fermer_pattern As Boolean
+    Private fermer_jeu As Boolean
+
 
     Public Sub couleur_richtextbox()
 
@@ -49,8 +52,8 @@ Module mod_pattern
         jeu.Label_timer.Visible = False
         MessageBox.Show("Vous avez a perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        mod_Liste_Joueurs.Joueur1.inc_score()
-        mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+        get_joueur1.inc_score()
+        get_joueur2.inc_cumul_temp(get_joueur2.get_tmp_temp_deviner())
 
         jeu.Btn_revanche.Visible = True
         jeu.btn_deviner.Enabled = False
@@ -60,14 +63,82 @@ Module mod_pattern
         jeu.Timer1.Stop()
         MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
         jeu.Btn_revanche.Visible = True
-        mod_Liste_Joueurs.Joueur2.inc_score()
-        mod_Liste_Joueurs.Joueur2.inc_cumul_temp(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+        get_joueur2.inc_score()
+        get_joueur2.inc_cumul_temp(get_joueur2.get_tmp_temp_deviner())
 
-        If (mod_Liste_Joueurs.Joueur2.get_best_time_joueur > mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner()) Then
+        If (get_joueur2.get_best_time_joueur > get_joueur2.get_tmp_temp_deviner()) Then
 
-            mod_Liste_Joueurs.Joueur2.set_best_time(mod_Liste_Joueurs.Joueur2.get_tmp_temp_deviner())
+            get_joueur2.set_best_time(get_joueur2.get_tmp_temp_deviner())
         End If
         jeu.btn_deviner.Enabled = False
         Return
+    End Sub
+
+
+
+
+
+    Public Function get_timer_count() As Integer
+
+        Return timer_count
+
+    End Function
+    Public Sub set_timer_count(timer As Integer)
+        timer_count = timer
+    End Sub
+
+
+
+    Public Function get_fermer_pattern() As Boolean
+
+        Return fermer_pattern
+
+    End Function
+
+
+    Public Sub set_fermer_pattern(fermer As Boolean)
+        fermer_pattern = fermer
+    End Sub
+
+
+    Public Function get_fermer_jeu() As Boolean
+
+        Return fermer_jeu
+
+    End Function
+
+
+    Public Sub set_fermer_jeu(fermer As Boolean)
+        fermer_jeu = fermer
+    End Sub
+    Public Function getval_tab_pattern1(indice As Integer) As String
+        Return tab_pattern1(indice)
+    End Function
+
+    Public Function getlength_tab_pattern1() As Integer
+        Return tab_pattern1.Length
+    End Function
+
+    Public Sub redim_tab_pattern1(nb As Integer)
+        ReDim tab_pattern1(nb)
+    End Sub
+    Public Sub set_tab_pattern1(indice As Integer, val As String)
+        tab_pattern1(indice) = val
+    End Sub
+
+
+    Public Function getval_tab_deviner(indice As Integer) As String
+        Return tab_deviner1(indice)
+    End Function
+
+    Public Function getlength_tab_deviner() As Integer
+        Return tab_deviner1.Length
+    End Function
+
+    Public Sub redim_tab_deviner(nb As Integer)
+        ReDim tab_deviner1(nb)
+    End Sub
+    Public Sub set_tab_deviner(indice As Integer, val As String)
+        tab_deviner1(indice) = val
     End Sub
 End Module

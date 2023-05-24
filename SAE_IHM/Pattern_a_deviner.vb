@@ -11,6 +11,7 @@ Public Class Pattern_a_deviner
             AddHandler textBox.KeyPress, AddressOf RestrictCharacters
         Next
         AfficherTextBox()
+        set_fermer_pattern(True)
 
 
 
@@ -20,7 +21,7 @@ Public Class Pattern_a_deviner
 
     Public Sub Pattern_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
 
-        If fermer = True Then
+        If get_fermer_pattern() = True Then
             ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
             Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -74,7 +75,7 @@ Public Class Pattern_a_deviner
 
     Private Sub btn_cacher_Click(sender As Object, e As EventArgs) Handles btn_cacher.Click
 
-        ReDim tab_pattern1(get_nb_case() - 1)
+        redim_tab_pattern1(get_nb_case() - 1)
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
             If textBox.Visible AndAlso String.IsNullOrEmpty(textBox.Text) Then
@@ -88,13 +89,13 @@ Public Class Pattern_a_deviner
         Dim index As Integer = 0
         For Each control As Control In Panel_textbox.Controls
             If TypeOf control Is TextBox AndAlso control.Visible Then
-                tab_pattern1(index) = DirectCast(control, TextBox).Text
+                set_tab_pattern1(index, DirectCast(control, TextBox).Text)
                 index += 1
             End If
         Next
 
         jeu.Show()
-        fermer = False
+        set_fermer_pattern(False)
         Me.Close()
 
     End Sub
