@@ -4,7 +4,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Status
 Public Class jeu
 
     Private Sub jeu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Recenter_panel()
         If get_use_time() = False Then
             Timer1.Enabled = False
             Label_timer.Visible = False
@@ -143,5 +143,13 @@ Public Class jeu
         Me.Close()
     End Sub
 
+    Private Sub Recenter_panel()
+        Dim master_mind_x_location As Integer = Me.label_mastermind.Location.X
+
+        Panel_textbox.Width = mod_param.get_nb_case * (TextBox1.Width + 10)
+        Dim x As Integer = (master_mind_x_location - Panel_textbox.Width / 2) + TextBox1.Width
+        Panel_textbox.Location = New System.Drawing.Point(x, 182)
+
+    End Sub
 
 End Class

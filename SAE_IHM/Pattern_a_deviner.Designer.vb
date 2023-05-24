@@ -22,7 +22,7 @@ Partial Class Pattern_a_deviner
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.mastermind = New System.Windows.Forms.Label()
+        Me.label_mastermind = New System.Windows.Forms.Label()
         Me.char_guess = New System.Windows.Forms.Label()
         Me.char_jouable = New System.Windows.Forms.Label()
         Me.btn_cacher = New System.Windows.Forms.Button()
@@ -40,17 +40,17 @@ Partial Class Pattern_a_deviner
         Me.Panel_textbox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'mastermind
+        'label_mastermind
         '
-        Me.mastermind.AutoSize = True
-        Me.mastermind.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.mastermind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.mastermind.Location = New System.Drawing.Point(393, 76)
-        Me.mastermind.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.mastermind.Name = "mastermind"
-        Me.mastermind.Size = New System.Drawing.Size(96, 17)
-        Me.mastermind.TabIndex = 1
-        Me.mastermind.Text = "Master Mind"
+        Me.label_mastermind.AutoSize = True
+        Me.label_mastermind.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.label_mastermind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.label_mastermind.Location = New System.Drawing.Point(393, 76)
+        Me.label_mastermind.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.label_mastermind.Name = "label_mastermind"
+        Me.label_mastermind.Size = New System.Drawing.Size(96, 17)
+        Me.label_mastermind.TabIndex = 1
+        Me.label_mastermind.Text = "Master Mind"
         '
         'char_guess
         '
@@ -104,70 +104,70 @@ Partial Class Pattern_a_deviner
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(24, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(17, 3)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(40, 23)
         Me.TextBox1.TabIndex = 0
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(70, 4)
+        Me.TextBox2.Location = New System.Drawing.Point(63, 3)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(40, 23)
         Me.TextBox2.TabIndex = 1
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(116, 4)
+        Me.TextBox3.Location = New System.Drawing.Point(109, 3)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(40, 23)
         Me.TextBox3.TabIndex = 2
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(162, 4)
+        Me.TextBox4.Location = New System.Drawing.Point(155, 3)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(40, 23)
         Me.TextBox4.TabIndex = 3
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(208, 4)
+        Me.TextBox5.Location = New System.Drawing.Point(201, 3)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(40, 23)
         Me.TextBox5.TabIndex = 4
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(254, 4)
+        Me.TextBox6.Location = New System.Drawing.Point(247, 3)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(40, 23)
         Me.TextBox6.TabIndex = 5
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(300, 4)
+        Me.TextBox7.Location = New System.Drawing.Point(293, 3)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(40, 23)
         Me.TextBox7.TabIndex = 6
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(346, 4)
+        Me.TextBox8.Location = New System.Drawing.Point(339, 3)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(40, 23)
         Me.TextBox8.TabIndex = 7
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(392, 4)
+        Me.TextBox9.Location = New System.Drawing.Point(385, 3)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(40, 23)
         Me.TextBox9.TabIndex = 8
         '
         'textbox10
         '
-        Me.textbox10.Location = New System.Drawing.Point(438, 4)
+        Me.textbox10.Location = New System.Drawing.Point(431, 3)
         Me.textbox10.Name = "textbox10"
         Me.textbox10.Size = New System.Drawing.Size(40, 23)
         Me.textbox10.TabIndex = 9
@@ -181,7 +181,7 @@ Partial Class Pattern_a_deviner
         Me.Controls.Add(Me.char_guess)
         Me.Controls.Add(Me.char_jouable)
         Me.Controls.Add(Me.btn_cacher)
-        Me.Controls.Add(Me.mastermind)
+        Me.Controls.Add(Me.label_mastermind)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Pattern_a_deviner"
         Me.Text = "Pattern à deviner"
@@ -192,7 +192,7 @@ Partial Class Pattern_a_deviner
 
     End Sub
 
-    Friend WithEvents mastermind As Label
+    Friend WithEvents label_mastermind As Label
     Friend WithEvents char_guess As Label
     Friend WithEvents char_jouable As Label
     Friend WithEvents btn_cacher As Button

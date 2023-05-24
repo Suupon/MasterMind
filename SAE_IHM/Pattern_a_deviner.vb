@@ -3,7 +3,7 @@
 Public Class Pattern_a_deviner
 
     Private Sub Pattern_a_deviner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Recenter_panel()
         char_guess.Text = get_caractere_possibles()
 
         For Each textBox As TextBox In Panel_textbox.Controls.OfType(Of TextBox)()
@@ -99,9 +99,13 @@ Public Class Pattern_a_deviner
 
     End Sub
 
-    Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
+    Private Sub Recenter_panel()
+        Dim master_mind_x_location As Integer = Me.label_mastermind.Location.X
+
+        Panel_textbox.Width = mod_param.get_nb_case * (TextBox1.Width + 10)
+        Dim x As Integer = (master_mind_x_location - Panel_textbox.Width / 2) + TextBox1.Width
+        Panel_textbox.Location = New System.Drawing.Point(x, 182)
 
     End Sub
-
 
 End Class

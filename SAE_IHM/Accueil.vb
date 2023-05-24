@@ -3,7 +3,7 @@ Imports System.Text
 
 Public Class Accueil
 
-    'Allo'
+
     Public Sub Accueil_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
         If MessageBox.Show("voulez vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then
             e.Cancel = True
@@ -35,6 +35,7 @@ Public Class Accueil
             Return False
         End If
         Return Not cb_box_p1.Text.Equals(cb_box_p2.Text)
+
     End Function
     Sub autocompletion_cb_box_joueurs(cb As ComboBox, nom_joueurs_source As AutoCompleteStringCollection)
         cb.AutoCompleteMode = AutoCompleteMode.SuggestAppend
