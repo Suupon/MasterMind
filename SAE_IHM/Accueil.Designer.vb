@@ -35,9 +35,9 @@ Partial Class Accueil
         '
         'background_accueil
         '
-        Me.background_accueil.Location = New System.Drawing.Point(1, 0)
+        Me.background_accueil.Location = New System.Drawing.Point(0, 2)
         Me.background_accueil.Name = "background_accueil"
-        Me.background_accueil.Size = New System.Drawing.Size(797, 451)
+        Me.background_accueil.Size = New System.Drawing.Size(801, 448)
         Me.background_accueil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.background_accueil.TabIndex = 15
         Me.background_accueil.TabStop = False
@@ -82,6 +82,7 @@ Partial Class Accueil
         '
         'btn_lancer_jeu
         '
+        Me.btn_lancer_jeu.AccessibleName = ""
         Me.btn_lancer_jeu.Location = New System.Drawing.Point(491, 310)
         Me.btn_lancer_jeu.Name = "btn_lancer_jeu"
         Me.btn_lancer_jeu.Size = New System.Drawing.Size(121, 34)
