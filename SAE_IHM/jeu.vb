@@ -43,10 +43,10 @@ Public Class jeu
     Public Sub Jeu_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
 
         If get_fermer_jeu() = True Then
-            ' Vérifier si l'utilisateur souhaite vraiment fermer le formulaire
-            Dim result As DialogResult = MessageBox.Show("Voulez-vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            ' Si l'utilisateur clique sur "Non", annuler la fermeture du formulaire
+            Dim result As DialogResult = MessageBox.Show("Revenir à l'accueil ?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+
             If result = DialogResult.No Then
                 e.Cancel = True
             Else
