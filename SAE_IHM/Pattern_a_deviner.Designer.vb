@@ -74,9 +74,9 @@ Partial Class Pattern_a_deviner
         Me.char_jouable.Location = New System.Drawing.Point(705, 231)
         Me.char_jouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.char_jouable.Name = "char_jouable"
-        Me.char_jouable.Size = New System.Drawing.Size(117, 15)
+        Me.char_jouable.Size = New System.Drawing.Size(122, 15)
         Me.char_jouable.TabIndex = 15
-        Me.char_jouable.Text = "Caractères Jouable :"
+        Me.char_jouable.Text = "Caractères Jouables :"
         '
         'btn_cacher
         '
@@ -201,9 +201,9 @@ Partial Class Pattern_a_deviner
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(254, 356)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(382, 21)
+        Me.Label1.Size = New System.Drawing.Size(391, 21)
         Me.Label1.TabIndex = 20
-        Me.Label1.Text = "< Choisissez une combinaison bien dur à deviner"
+        Me.Label1.Text = "< Choisissez une combinaison bien dure à deviner"
         '
         'Pattern_a_deviner
         '

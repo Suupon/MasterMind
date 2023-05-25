@@ -152,7 +152,7 @@ Public Class jeu
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         set_timer_count(get_timer_count() - Timer1.Interval)
         Label_timer.Text = CStr(get_timer_count() / Timer1.Interval)
-        get_joueur2().inc_tmp_temp_devine()
+        get_joueur2().inc_tmp_temps_devine()
 
         If get_timer_count() = 0 Then
             mod_pattern.perdu()

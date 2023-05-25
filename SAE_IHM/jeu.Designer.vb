@@ -76,9 +76,9 @@ Partial Class jeu
         Me.char_jouable.Location = New System.Drawing.Point(598, 361)
         Me.char_jouable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.char_jouable.Name = "char_jouable"
-        Me.char_jouable.Size = New System.Drawing.Size(117, 15)
+        Me.char_jouable.Size = New System.Drawing.Size(122, 15)
         Me.char_jouable.TabIndex = 24
-        Me.char_jouable.Text = "Caractères Jouable :"
+        Me.char_jouable.Text = "Caractères Jouables :"
         '
         'btn_deviner
         '
@@ -256,7 +256,7 @@ Partial Class jeu
         '
         Me.Compteur.AutoSize = True
         Me.Compteur.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Compteur.Location = New System.Drawing.Point(199, 38)
+        Me.Compteur.Location = New System.Drawing.Point(213, 38)
         Me.Compteur.Name = "Compteur"
         Me.Compteur.Size = New System.Drawing.Size(69, 17)
         Me.Compteur.TabIndex = 36
@@ -268,9 +268,9 @@ Partial Class jeu
         Me.Label_e_restant.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label_e_restant.Location = New System.Drawing.Point(32, 38)
         Me.Label_e_restant.Name = "Label_e_restant"
-        Me.Label_e_restant.Size = New System.Drawing.Size(163, 17)
+        Me.Label_e_restant.Size = New System.Drawing.Size(175, 17)
         Me.Label_e_restant.TabIndex = 37
-        Me.Label_e_restant.Text = "Nombre d'essai restant : "
+        Me.Label_e_restant.Text = "Nombre d'essais restants : "
         '
         'Label_temps
         '

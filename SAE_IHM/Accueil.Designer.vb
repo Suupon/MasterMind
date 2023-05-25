@@ -87,7 +87,7 @@ Partial Class Accueil
         Me.btn_lancer_jeu.Name = "btn_lancer_jeu"
         Me.btn_lancer_jeu.Size = New System.Drawing.Size(121, 34)
         Me.btn_lancer_jeu.TabIndex = 18
-        Me.btn_lancer_jeu.Text = "C'est partie !" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.btn_lancer_jeu.Text = "C'est parti !" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.btn_lancer_jeu.UseVisualStyleBackColor = True
         '
         'cb_box_p2

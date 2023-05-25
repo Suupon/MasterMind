@@ -50,10 +50,10 @@ Module mod_pattern
         jeu.Timer1.Stop()
         jeu.Compteur.Text = 0
         jeu.Label_timer.Visible = False
-        MessageBox.Show("Vous avez a perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Vous avez perdu :/", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         get_joueur1.inc_score()
-        get_joueur2.inc_cumul_temp(get_joueur2.get_tmp_temp_deviner())
+        get_joueur2.inc_cumul_temps(get_joueur2.get_tmp_temps_deviner())
 
         jeu.Btn_revanche.Visible = True
         jeu.btn_deviner.Enabled = False
@@ -64,11 +64,11 @@ Module mod_pattern
         MessageBox.Show("Vous avez gagné !!!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information)
         jeu.Btn_revanche.Visible = True
         get_joueur2.inc_score()
-        get_joueur2.inc_cumul_temp(get_joueur2.get_tmp_temp_deviner())
+        get_joueur2.inc_cumul_temps(get_joueur2.get_tmp_temps_deviner())
 
-        If (get_joueur2.get_best_time_joueur > get_joueur2.get_tmp_temp_deviner()) Then
+        If (get_joueur2.get_best_time_joueur > get_joueur2.get_tmp_temps_deviner()) Then
 
-            get_joueur2.set_best_time(get_joueur2.get_tmp_temp_deviner())
+            get_joueur2.set_best_time(get_joueur2.get_tmp_temps_deviner())
         End If
         jeu.btn_deviner.Enabled = False
         Return

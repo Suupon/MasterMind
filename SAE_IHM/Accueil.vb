@@ -5,7 +5,7 @@ Public Class Accueil
 
 
     Public Sub Accueil_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
-        If MessageBox.Show("voulez vous vraiment nous quitté ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then
+        If MessageBox.Show("voulez vous vraiment nous quitter ou avez vous juste missclick?", "Confirmation de fermeture", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then
             e.Cancel = True
         End If
     End Sub

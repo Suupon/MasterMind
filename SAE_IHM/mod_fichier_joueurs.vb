@@ -16,8 +16,8 @@ Module mod_fichier_joueurs
         Dim score As Integer
         Dim best_time As Integer 'en sec
         Dim nb_partie_first As Integer
-        Dim nb_partie_segond As Integer
-        Dim cumul_temp_deviner_combi As Integer ' en sec
+        Dim nb_partie_second As Integer
+        Dim cumul_temps_deviner_combi As Integer ' en sec
 
         For i As Integer = 0 To all_joueurs_str.Length - 1
             joueur_info_unsplit = all_joueurs_str(i)
@@ -26,10 +26,10 @@ Module mod_fichier_joueurs
             score = CInt(joueur_info_split(1))
             best_time = CInt(joueur_info_split(2))
             nb_partie_first = CInt(joueur_info_split(3))
-            nb_partie_segond = CInt(joueur_info_split(4))
-            cumul_temp_deviner_combi = CInt(joueur_info_split(5))
+            nb_partie_second = CInt(joueur_info_split(4))
+            cumul_temps_deviner_combi = CInt(joueur_info_split(5))
 
-            Dim joueur As New Joueur(nom, score, best_time, nb_partie_first, nb_partie_segond, cumul_temp_deviner_combi)
+            Dim joueur As New Joueur(nom, score, best_time, nb_partie_first, nb_partie_second, cumul_temps_deviner_combi)
             Accueil.cb_box_p1.Items.Add(nom)
             Accueil.cb_box_p2.Items.Add(nom)
 

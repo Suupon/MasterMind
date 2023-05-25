@@ -57,7 +57,7 @@
     Public Function get_nb_partie_first(j As Joueur) As Integer
         Return j.get_nb_partie_first_joueur
     End Function
-    Public Function get_nb_partie_segond(j As Joueur) As Integer
+    Public Function get_nb_partie_second(j As Joueur) As Integer
         Return j.get_nb_partie_second_joueur
     End Function
     Public Function get_temp_cumul(j As Joueur) As Integer

@@ -34,11 +34,11 @@ Partial Class param
         Me.ck_use_time = New System.Windows.Forms.CheckBox()
         Me.btn_valide_param = New System.Windows.Forms.Button()
         Me.pnl_param = New System.Windows.Forms.Panel()
+        Me.btn_sauvegarde_path = New System.Windows.Forms.Button()
         Me.btn_couleur_abs = New System.Windows.Forms.Button()
         Me.btn_couleur_mal_place = New System.Windows.Forms.Button()
         Me.btn_couleur_bon = New System.Windows.Forms.Button()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.btn_sauvegarde_path = New System.Windows.Forms.Button()
         Me.pnl_param.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -135,7 +135,7 @@ Partial Class param
         Me.btn_valide_param.Name = "btn_valide_param"
         Me.btn_valide_param.Size = New System.Drawing.Size(75, 23)
         Me.btn_valide_param.TabIndex = 23
-        Me.btn_valide_param.Text = "Validé"
+        Me.btn_valide_param.Text = "Valider"
         Me.btn_valide_param.UseVisualStyleBackColor = True
         '
         'pnl_param
@@ -158,6 +158,15 @@ Partial Class param
         Me.pnl_param.Name = "pnl_param"
         Me.pnl_param.Size = New System.Drawing.Size(407, 305)
         Me.pnl_param.TabIndex = 24
+        '
+        'btn_sauvegarde_path
+        '
+        Me.btn_sauvegarde_path.Location = New System.Drawing.Point(77, 141)
+        Me.btn_sauvegarde_path.Name = "btn_sauvegarde_path"
+        Me.btn_sauvegarde_path.Size = New System.Drawing.Size(313, 23)
+        Me.btn_sauvegarde_path.TabIndex = 25
+        Me.btn_sauvegarde_path.Text = "Choisir un emplacement pour la sauvegarde des joueurs"
+        Me.btn_sauvegarde_path.UseVisualStyleBackColor = True
         '
         'btn_couleur_abs
         '
@@ -185,15 +194,6 @@ Partial Class param
         Me.btn_couleur_bon.TabIndex = 23
         Me.btn_couleur_bon.Text = "Couleur Présent et bien placé"
         Me.btn_couleur_bon.UseVisualStyleBackColor = True
-        '
-        'btn_sauvegarde_path
-        '
-        Me.btn_sauvegarde_path.Location = New System.Drawing.Point(77, 141)
-        Me.btn_sauvegarde_path.Name = "btn_sauvegarde_path"
-        Me.btn_sauvegarde_path.Size = New System.Drawing.Size(313, 23)
-        Me.btn_sauvegarde_path.TabIndex = 25
-        Me.btn_sauvegarde_path.Text = "Choisir un emplacement pour la sauvegarde des joueurs"
-        Me.btn_sauvegarde_path.UseVisualStyleBackColor = True
         '
         'param
         '

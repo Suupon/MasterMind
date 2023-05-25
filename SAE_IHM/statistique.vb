@@ -3,7 +3,7 @@ Public Class statistique
 
 
     Private Sub statistique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim choix_trie As String() = {"Nom (Alphabétique)", "meilleur score", "meilleur temp"}
+        Dim choix_trie As String() = {"Nom (Alphabétique)", "meilleur score", "meilleur temps"}
         cb_box_choix_trie.Items.AddRange(choix_trie)
 
         load_DataGridView_joueur()
@@ -17,7 +17,7 @@ Public Class statistique
         table.Columns.Add("Meilleur Temps", Type.GetType("System.Int32"))
         table.Columns.Add("Nombre de partie 1er joueur", Type.GetType("System.Int32"))
         table.Columns.Add("Nombre de partie 2e joueur", Type.GetType("System.Int32"))
-        table.Columns.Add("Total Temp")
+        table.Columns.Add("Total Temps")
         Dim nom As String
         Dim meilleur_score As Integer
         Dim meilleur_temps As Integer
