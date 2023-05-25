@@ -43,7 +43,7 @@ Public Class Joueur
     Public Function get_nb_partie_second_joueur() As Integer
         Return nb_partie_second_joueur
     End Function
-    Public Function get_cumul_temp_joueur() As Integer
+    Public Function get_cumul_temps_joueur() As Integer
         Return cumul_temps_deviner_combi_joueur
     End Function
     Public Overrides Function ToString() As String
