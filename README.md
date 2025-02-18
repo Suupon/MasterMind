@@ -1,4 +1,4 @@
-# 🎭 Projet SAE - Jeu de Mastermind
+# 🎭 Jeu de Mastermind
 
 ## 📄 Description
 Ce projet est une application en **Visual Basic .NET** qui implémente un jeu de **Mastermind**. Le but est de deviner un motif secret en un nombre limité d'essais. L'application gère plusieurs fonctionnalités comme la gestion des joueurs, l'affichage des statistiques et la personnalisation des paramètres.
